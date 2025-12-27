@@ -1,9 +1,10 @@
-function Services() {
+
+function page() {
   return (
     <div className="container mx-auto pt-8">
-      <p>Services page</p>
+      <p>Privacy Policy page</p>
     </div>
   );
 }
 
-export default Services;
+export default page;

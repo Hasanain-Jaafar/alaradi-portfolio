@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Alaradi",
   description: "Alaradi Portfolio",
-  icons: "./portfolio.svg",
+  icons: "/portfolio.svg",
 };
 
 export default function RootLayout({
@@ -28,7 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased  bg-stone-300 min-h-screen flex flex-col items-center`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased gradient min-h-screen flex flex-col items-center`}
       >
         <Navbar />
         {children}
