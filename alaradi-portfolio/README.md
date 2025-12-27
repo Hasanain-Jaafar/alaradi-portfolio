@@ -1,36 +1,159 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ✨ Alaradi Portfolio
 
-## Getting Started
+A clean, modern portfolio website built to showcase my work. Dark theme with subtle dark-blue gradients, fully responsive, and optimized for performance.
 
-First, run the development server:
+---
+
+## 🚀 What's This?
+
+A personal portfolio with:
+
+- **Services** — What I offer
+- **Blog** — My thoughts and tutorials
+- **About** — Who I am
+- **Contact** — Get in touch via a working email form
+
+Built with modern web tech, fully responsive, and lightning fast.
+
+---
+
+## 🛠️ Built With
+
+**Core:**
+
+- Next.js 16.1.1 — React framework
+- Tailwind CSS — Styling
+
+**Features:**
+
+- Resend — Contact form emails
+- Lucide React — Icons
+- Google Fonts — Typography
+
+**Why these?** All free, well-documented, and perfect for portfolios.
+
+---
+
+## 🎨 Design Highlights
+
+- **Dark minimal aesthetic** — Easy on the eyes
+- **Dark blue → light blue gradients** — For the main website theme
+- **Poppins + Limelight fonts** — Modern and readable
+- **Mobile-first** — Looks great on any device
+
+---
+
+## 💻 Run It Locally
+
+Want to see how it works or use it as a template? Here's how:
+
+### 1. Clone it
+
+```bash
+git clone https://github.com/Hasanain-Jaafar/alaradi-portfolio.git
+cd alaradi-portfolio
+```
+
+### 2. Install stuff
+
+```bash
+npm install
+```
+
+### 3. Add your email API key
+
+Create a file called `.env.local` in the root folder:
+
+```
+RESEND_API_KEY=your_key_here
+CONTACT_EMAIL=your@email.com
+```
+
+Get a free API key from [resend.com](https://resend.com) (3,000 emails/month free).
+
+### 4. Start the dev server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Go to `http://localhost:3000` in your browser. Done! 🎉
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📁 Project Structure
 
-## Learn More
+```
+src/app/
+├── components/        # Reusable pieces (navbar, footer, buttons)
+├── about/            # About page
+├── services/         # Services page
+├── blogs/            # Blog listing
+├── contact/          # Contact form
+├── layout.jsx        # Site-wide layout
+└── page.jsx          # Homepage
+```
 
-To learn more about Next.js, take a look at the following resources:
+Simple and organized.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🌐 Deploy It
 
-## Deploy on Vercel
+### Easiest way: Vercel OR Netlify
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Push your code to GitHub
+2. Go to [vercel.com](https://vercel.com) OR [netlify.com](https://www.netlify.com) and sign in
+3. Click "New Project" → import your repo
+4. Add your environment variables (`RESEND_API_KEY`)
+5. Click "Deploy"
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+**That's it.** Your site goes live in ~2 minutes, for free.
+
+---
+
+## 🎨 Customize It
+
+### Change the colors
+
+Edit `globals.css`:
+
+```javascript
+@theme {
+  /* ? ====== CUSTOM COLORS ====== */
+  /*  */
+  --color-primary: #ff6f91;
+  /*  */
+  /* ? ===== TEXT COLORS ===== */
+  /*  */
+  --color-logo: #313131;
+  --color-paragraph: white;
+  --color-text: rgba(215, 215, 215, 0.8);
+  --color-text-light: #ddd;
+  --color-btn: #f54a00;
+  /*  */
+  }
+```
+
+### Change the fonts
+
+Add in `globals.css` any [Google Font](https://fonts.google.com/).
+```javascript
+@import url(google_Font);
+```
+
+### Add blog posts
+
+Drop `.mdx` files in the blog folder. Markdown + React components = easy content creation.
+
+
+---
+
+## 📝 License
+
+Free to use under the MIT License. Fork it, customize it, make it yours. Just give credit if you use it as-is!
+
+---
+<br>
+
+**Made with ☕+ 🎶 + code**
