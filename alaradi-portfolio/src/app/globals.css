@@ -3,24 +3,20 @@
 @import "tailwindcss";
 
 @theme {
+
   /* ? ====== CUSTOM COLORS ====== */
-  /*  */
   --color-primary: #ff6f91;
-  /*  */
+  
   /* ? ===== TEXT COLORS ===== */
-  /*  */
   --color-logo: #313131;
   --color-paragraph: white;
-  --color-text: rgba(215, 215, 215, 0.8);
+  --color-text: #a3a3a3;
   --color-text-light: #ddd;
   --color-btn: #f54a00;
-  /*  */
   /* ? ===== Custom Fonts ====== */
-  /*  */
   --font-heading: "Poppins", sans-serif;
   --font-logo: "Limelight", sans-serif;
   --font-weight: 500;
-  /*  */
 }
 
 @layer base {
@@ -84,7 +80,7 @@
 }
 @layer components {
   .gradient {
-    @apply bg-linear-to-b from-slate-900 to-slate-700;
+    @apply bg-linear-to-b from-slate-900 to-slate-800;
   }
   .small{
     font-size: 0.9rem;
