@@ -1,7 +1,6 @@
 /* |> Fonts  */
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Limelight&display=swap");
 @import "tailwindcss";
+
 /*  */
 @theme {
   /*  |>====== Backgrounds Color ====== */
@@ -18,10 +17,10 @@
   /*  */
   /* |>===== TEXT COLORS ===== */
   --color-border-subtle: #262626;
-  --color-border-accent:  var(--color-bg-accent);
+  --color-border-accent: var(--color-bg-accent);
   /* ? ===== Custom Fonts ====== */
-  --font-heading: "Poppins", sans-serif;
-  --font-logo: "Limelight", sans-serif;
+  --font-heading: `var(--font-poppins) `, sans-serif;
+  --font-logo: "var(--font-limelight)", sans-serif;
   --font-weight: 500;
   --font-semi-bold: 600;
   --font-bold: 800;
@@ -117,3 +116,64 @@
     box-shadow: 0 10px 25px -5px rgba(249, 115, 22, 0.2);
   }
 }
+/* ? ------->> Blogging System */
+/* MDX Prose Styles */
+/* .prose {
+  @apply text-text-secondary leading-relaxed;
+}
+
+.prose h1 {
+  @apply text-5xl font-heading font-bold text-primary mb-6 mt-8;
+}
+
+.prose h2 {
+  @apply text-4xl font-heading font-bold text-text-primary mb-4 mt-8;
+}
+
+.prose h3 {
+  @apply text-3xl font-heading font-bold text-text-primary mb-3 mt-6;
+}
+
+.prose p {
+  @apply text-lg text-text-secondary mb-6 leading-relaxed;
+}
+
+.prose ul, .prose ol {
+  @apply text-text-secondary mb-6 ml-6;
+}
+
+.prose li {
+  @apply mb-2;
+}
+
+.prose strong {
+  @apply text-text-primary font-semibold;
+}
+
+.prose em {
+  @apply italic;
+}
+
+.prose a {
+  @apply text-text-accent hover:text-[#fb923c] transition-colors underline;
+}
+
+.prose code {
+  @apply bg-bg-secondary px-2 py-1 rounded text-accent text-sm;
+}
+
+.prose pre {
+  @apply bg-bg-secondary p-6 rounded-lg overflow-x-auto mb-6 border border-subtle;
+}
+
+.prose pre code {
+  @apply bg-transparent p-0 text-sm;
+}
+
+.prose blockquote {
+  @apply border-l-4 border-accent pl-6 italic text-text-secondary my-6;
+}
+
+.prose img {
+  @apply rounded-lg my-8;
+} */

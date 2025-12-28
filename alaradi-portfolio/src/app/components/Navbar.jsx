@@ -19,7 +19,7 @@ function Navbar() {
           </Links>
         </div>
         <div className=" flex items-center gap-6">
-          <Links path="/pages/blogs" name="Blogs" styleType="link" />
+          <Links path="/blogs" name="Blogs" styleType="link" />
           <Links path="/pages/services" name="Services" styleType="link" />
           <Links path="/pages/about" name="About" styleType="link" />
           {/* <Links path="/pages/contact" name="Contact" styleType="link" /> */}
