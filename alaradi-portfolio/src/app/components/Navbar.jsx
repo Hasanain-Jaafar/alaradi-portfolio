@@ -4,30 +4,27 @@ import Image from "next/image";
 
 function Navbar() {
   return (
-    <div className=" mx-auto bg-transparent shadow-white/5 shadow-md min-w-full sticky top-0">
+    <div className=" mx-auto bg-bg-secondary shadow-white/5 shadow-md min-w-full sticky top-0">
       <div className="flex items-center justify-between flex-row py-8 container mx-auto">
         <div>
-          {/* <Links path="/" name="Alaradi" styleType="logo" /> */}
-          
-            <Links path="/" styleType="link">
-              <div className="w-36">
-                <Image
-                  src="/logo.png"
-                  width={395}
-                  height={108}
-                  alt="Picture of the author"
-                />
-              </div>
-            </Links>
-          
+          <Links path="/" styleType="link">
+            <div className="w-36">
+              <Image
+                src="/logo.png"
+                width={395}
+                height={108}
+                alt="Picture of the author"
+              />
+            </div>
+          </Links>
         </div>
         <div className=" flex items-center gap-6">
-          <Links path="/pages/about" name="About" styleType="link" />
-          <Links path="/pages/services" name="Services" styleType="link" />
           <Links path="/pages/blogs" name="Blogs" styleType="link" />
+          <Links path="/pages/services" name="Services" styleType="link" />
+          <Links path="/pages/about" name="About" styleType="link" />
           {/* <Links path="/pages/contact" name="Contact" styleType="link" /> */}
-          <Links path="/pages/contact"  styleType="link" >
-            <Custbutton btn="Contact" isCta={true} />
+          <Links path="/pages/contact" styleType="link">
+            <Custbutton btn="Contact" styleType='smCta' />
           </Links>
         </div>
       </div>

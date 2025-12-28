@@ -126,11 +126,11 @@ Edit `globals.css`:
   /*  */
   /* ? ===== TEXT COLORS ===== */
   /*  */
-  --color-logo: #313131;
+  --color-bg-secondary: #313131;
   --color-paragraph: white;
   --color-text: rgba(215, 215, 215, 0.8);
   --color-text-light: #ddd;
-  --color-btn: #f54a00;
+  --color-bg-accent: #f54a00;
   /*  */
   }
 ```

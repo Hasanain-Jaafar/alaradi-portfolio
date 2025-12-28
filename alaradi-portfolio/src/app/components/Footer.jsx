@@ -4,24 +4,14 @@ import Custbutton from "./Button";
 import Link from "next/link";
 function Footer() {
   return (
-    <div className="mt-auto flex flex-col items-center bg-transparent inset-shadow-white/8 inset-shadow-2xs min-w-full z-10 ">
-      <div className="flex items-center justify-between flex-row py-8 container mx-auto">
-        <div className="flex flex-col gap-2 items-start justify-center">
-          <Links path="/pages/about" name="About" styleType="footerLink" />
-          <Links
-            path="/pages/services"
-            name="Services"
-            styleType="footerLink"
-          />
-          <Links path="/pages/blogs" name="Blogs" styleType="footerLink" />
-          <Links path="/pages/contact" name="Contact" styleType="footerLink" />
-        </div>
+    <div className="mt-auto flex flex-col items-center bg-bg-secondary inset-shadow-white/8 inset-shadow-2xs min-w-full">
+      <div className="flex items-start justify-between flex-row py-16 container mx-auto">
+        
         {/* ==================== LOGO SIDE ========== */}
-        <div className=" w-72 flex flex-col items-end mb-auto ">
-          {/* ======== LOGO ===== */}
-          <div className="flex flex-col justify-center items-center">
+        <div className=" w-72 flex flex-col items-start mb-auto ">
+          <div className="flex flex-col justify-center items-start">
             <Links path="/" styleType="link">
-              <div className="w-36">
+              <div className="w-40">
                 <Image
                   src="/logo.png"
                   width={395}
@@ -36,7 +26,7 @@ function Footer() {
               <h6>Contact Information</h6>
               <Link
                 href="mailto:someone@example.com"
-                className="font-heading text-paragraph flex items-center mr-auto gap-2 pt-2 "
+                className="font-heading text-text-primary flex items-center mr-auto gap-2 pt-2 "
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -53,7 +43,7 @@ function Footer() {
               </Link>
               <Link
                 href="tel:+123 456789"
-                className="font-heading text-paragraph flex mr-auto items-center gap-2 pt-2 "
+                className="font-heading text-text-primary flex mr-auto items-center gap-2 pt-2 "
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -71,6 +61,17 @@ function Footer() {
             </div>
           </div>
         </div>
+        {/* // todo */}
+        <div className="flex flex-col gap-2 items-start justify-center">
+          <Links path="/pages/about" name="About" styleType="footerLink" />
+          <Links
+            path="/pages/services"
+            name="Services"
+            styleType="footerLink"
+          />
+          <Links path="/pages/blogs" name="Blogs" styleType="footerLink" />
+          <Links path="/pages/contact" name="Contact" styleType="footerLink" />
+        </div>
         {/* =============== NEWSLETTER SIDE */}
         <div className="w-2/6">
           <div className="w-full">
@@ -81,7 +82,7 @@ function Footer() {
                 placeholder="Enter Your Email"
                 className=" w-full px-2"
               />
-              <Custbutton btn="Subscribe" isCta={false} />
+              <Custbutton btn="Subscribe" styleType='smCta' />
             </div>
           </div>
 
@@ -159,10 +160,10 @@ function Footer() {
       {/* =============== COPYRIGHTS SIDE */}
       <div className="flex justify-between gap-16 items-center container py-6">
         <div className="flex flex-row gap-2 justify-center items-center">
-          <p className=" text-paragraph align-middle small">
+          <p className=" text-text-primary align-middle small">
             &copy; 2025 Copyright
           </p>
-          <p className="font-heading text-paragraph small">
+          <p className="font-heading text-text-primary small">
             {" "}
             Alaradi. All Rights Reserved.
           </p>

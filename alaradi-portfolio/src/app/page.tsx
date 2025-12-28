@@ -1,20 +1,9 @@
 import ServiceCard from "@/app/components/ServiceCard";
 import Cta from "@/app/components/Cta";
+import Stats from "@/app/components/Status";
+import Custbutton from "@/app/components/Button";
 import { ArrowRight, Code, Palette, Zap } from "lucide-react";
 
-const colors = {
-  bgPrimary: "#0a0a0a",
-  bgSecondary: "#213258",
-  bgTertiary: "#262626",
-  textPrimary: "#e5e5e5",
-  textSecondary: "#a3a3a3",
-  textTertiary: "#737373",
-  borderSubtle: "#262626",
-  borderDefault: "#404040",
-  accent: "#f54a00",
-  accentLight: "#ca3500",
-  accentDark: "#ea580c",
-};
 export default function Home() {
   return (
     <div className="container mx-auto pt-8 flex flex-col gap-4">
@@ -22,66 +11,39 @@ export default function Home() {
       <section className="pt-32 pb-20 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="max-w-4xl">
-            {/* Orange accent bar */}
-            <div className="w-20 h-1 bg-btn rounded-full mb-8"></div>
-
-            <h1 className="text-6xl text-text md:text-7xl font-bold mb-6 leading-tight">
+            <h1 className="text-6xl text-text-primary md:text-7xl font-bold mb-6 leading-tight">
               Creative Developer
               <br />
-              <span className="text-text">Building Bold</span>
+              <span className="text-text-primary">Building Bold</span>
               <br />
               Digital Experiences
             </h1>
 
-            <p className="text-xl text-text leading-relaxed mb-10 max-w-2xl">
+            <p className="text-xl text-text-secondary leading-relaxed mb-10 max-w-2xl">
               I design and develop modern web applications that are fast,
               accessible, and conversion-focused. Let&apos;s build something
               remarkable together.
             </p>
 
             <div className="flex gap-4 font-heading">
-              <button className="bg-btn hover:bg-orange-700 text-white px-8 py-4  font-semibold transition-all shadow-lg shadow-[#ffffff5c]/20 flex items-center gap-2">
+              <button className="bg-bg-accent hover:bg-orange-700 text-text-primary px-8 py-4 font-semibold tracking-wide  transition-all duration-400 ease-in-out shadow-lg shadow-[#ffffff5c]/20 flex items-center gap-2 cursor-pointer hover:text-text-secondary font-heading">
                 View My Work <ArrowRight size={20} />
               </button>
-              <button className="bg-transparent border-2 border-btn text-btn hover:bg-orange-700 hover:text-white px-8 py-4 rounded-lg font-semibold transition-all flex items-center gap-2">
-                Download Resume
-              </button>
+              <Custbutton btn="Skills" styleType="chostBtn"/> 
             </div>
           </div>
         </div>
       </section>
+      <Stats />
       {/* Services Section */}
-      <section className="px-6 py-4 " id="services">
-        <div className="mx-auto my-0 max-w-[1280]">
+      <section className="px-6 pt-20 pb-4 " id="services">
+        <div className="mx-auto my-0 max-w-7xl">
           <div className="mb-16">
-            <div
-              style={{
-                width: "5rem",
-                height: "0.25rem",
-                backgroundColor: colors.accent,
-                borderRadius: "9999px",
-                marginBottom: "1.5rem",
-              }}
-            ></div>
-            <h2
-              style={{
-                fontSize: "clamp(2rem, 5vw, 3rem)",
-                fontWeight: "bold",
-                marginBottom: "1rem",
-              }}
-            >
-              What I Do
-            </h2>
-            <p
-              style={{
-                fontSize: "1.25rem",
-                color: colors.textSecondary,
-                maxWidth: "42rem",
-              }}
-            >
+            <h2 className="mb-4">What I Do</h2>
+            <h6 className="max-w-lg">
               Specialized in creating high-quality digital solutions that drive
               results
-            </p>
+            </h6>
           </div>
 
           <div
@@ -96,7 +58,6 @@ export default function Home() {
               icon={<Code size={28} />}
               title="Web Development"
               description="Building fast, scalable web applications with modern frameworks like Next.js, React, and Tailwind CSS."
-              colors={colors}
             />
 
             {/* Service Card 2 */}
@@ -104,7 +65,6 @@ export default function Home() {
               icon={<Palette size={28} />}
               title="UI/UX Design"
               description="Crafting user-centered designs that solve real problems and create delightful experiences."
-              colors={colors}
             />
 
             {/* Service Card 3 */}
@@ -112,12 +72,12 @@ export default function Home() {
               icon={<Zap size={28} />}
               title="Performance Optimization"
               description="Optimizing websites for speed, SEO, and conversion to maximize your business impact."
-              colors={colors}
             />
           </div>
         </div>
-    </section>
-      <Cta colors={colors}/>
+      </section>
+
+      <Cta />
     </div>
   );
 }
