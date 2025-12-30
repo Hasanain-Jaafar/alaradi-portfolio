@@ -6,30 +6,21 @@ export default function Stats() {
   ];
 
   return (
-    <div className="max-w-7xl mx-auto pt-20">
-      <section className="bg-bg-secondary flex items-center justify-center max-w-7xl mx-auto py-12 px-6 border-t border-b border-subtle">
-        <div
-          style={{
-            minWidth: "1280px",
-            margin: "0 auto",
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
-            gap: "3rem",
-            textAlign: "center",
-          }}
-        >
+    <section className="bg-bg-secondary py-8 md:py-12 px-6 border-t border-b border-subtle">
+      <div className="max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 md:gap-12 text-center">
           {stats.map((stat, index) => (
             <div key={index}>
-              <div className="text-text-accent font-heading font-bold mb-2 text-5xl">
+              <div className="text-text-accent font-heading mb-2 text-4xl md:text-5xl">
                 {stat.number}
               </div>
-              <div className="text-text-secondary text-xl">
+              <div className="text-text-secondary text-base md:text-xl">
                 {stat.label}
               </div>
             </div>
           ))}
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
   );
 }

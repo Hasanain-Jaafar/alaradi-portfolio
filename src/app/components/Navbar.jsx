@@ -1,24 +1,37 @@
+'use client';
+
+import { useState } from 'react';
 import Links from "./Links";
 import Custbutton from "./Button";
 import Image from "next/image";
+import { Menu, X } from 'lucide-react';
 
 function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => setIsOpen(!isOpen);
+  const closeMenu = () => setIsOpen(false);
+
   return (
-    <div className=" mx-auto bg-bg-secondary shadow-white/5 shadow-md min-w-full sticky top-0 z-10">
-      <nav aria-label="Main navigation" className="flex items-center justify-between flex-row py-8 container mx-auto">
+    <div className="mx-auto bg-bg-secondary shadow-white/5 shadow-md min-w-full sticky top-0 z-50">
+      <nav aria-label="Main navigation" className="flex items-center justify-between py-4 md:py-8 container mx-auto px-6">
+        
+        {/* Logo */}
         <div>
-          <Links path="/" styleType="link">
-            <div className="w-36">
+          <Links path="/" styleType="link" onClick={closeMenu}>
+            <div className="w-24 md:w-36">
               <Image
                 src="/logo.png"
                 width={395}
                 height={108}
-                alt="Picture of the author"
+                alt="Alaradi Logo"
               />
             </div>
           </Links>
         </div>
-        <div className=" flex items-center gap-6">
+
+        {/* Desktop Navigation */}
+        <div className="hidden md:flex items-center gap-6">
           <Links path="/blogs" name="Blogs" styleType="link" />
           <Links path="/services" name="Services" styleType="link" />
           <Links path="/about" name="About" styleType="link" />
@@ -27,7 +40,55 @@ function Navbar() {
             <Custbutton btn="Contact" styleType='smCta' />
           </Links>
         </div>
+
+        {/* Mobile Hamburger Button */}
+        <button
+          onClick={toggleMenu}
+          className="md:hidden text-white p-2 hover:bg-white/10 rounded-lg transition-colors"
+          aria-label="Toggle menu"
+        >
+          {isOpen ? <X size={28} /> : <Menu size={28} />}
+        </button>
       </nav>
+
+      {/* Mobile Menu Overlay */}
+      {isOpen && (
+        <div 
+          className="fixed inset-0 bg-black/50 z-40 md:hidden"
+          onClick={closeMenu}
+        />
+      )}
+
+      {/* Mobile Menu Slide-in */}
+      <div 
+        className={`
+          fixed top-0 right-0 h-full w-64 bg-bg-secondary shadow-2xl z-50 
+          transform transition-transform duration-300 ease-in-out md:hidden
+          ${isOpen ? 'translate-x-0' : 'translate-x-full'}
+        `}
+      >
+        {/* Close Button */}
+        <div className="flex justify-end p-6">
+          <button
+            onClick={closeMenu}
+            className="text-white p-2 hover:bg-white/10 rounded-lg transition-colors"
+            aria-label="Close menu"
+          >
+            <X size={28} />
+          </button>
+        </div>
+
+        {/* Mobile Navigation Links */}
+        <div className="flex flex-col gap-6 px-6">
+          <Links path="/blogs" name="Blogs" styleType="link" onClick={closeMenu} />
+          <Links path="/services" name="Services" styleType="link" onClick={closeMenu} />
+          <Links path="/about" name="About" styleType="link" onClick={closeMenu} />
+          <Links path="/myWork" name="My Work" styleType="link" onClick={closeMenu} />
+          <Links path="/contact" styleType="link" onClick={closeMenu}>
+            <Custbutton btn="Contact" styleType='smCta' />
+          </Links>
+        </div>
+      </div>
     </div>
   );
 }
