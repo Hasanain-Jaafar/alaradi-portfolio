@@ -97,7 +97,7 @@ export default function AboutPage() {
             </p>
 
             <div className="flex justify-center  ">
-              <Links path="/pages/contact" styleType="link">
+              <Links path="/contact" styleType="link">
                 <Custbutton btn="Get In Touch" styleType="bgCta">
                   <Send size={20} />
                 </Custbutton>

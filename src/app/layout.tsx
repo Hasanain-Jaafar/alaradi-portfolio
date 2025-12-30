@@ -26,8 +26,11 @@ const limelight = Limelight({
 })
 
 export const metadata: Metadata = {
-  title: "Alaradi",
-  description: "Alaradi Portfolio",
+  title: "Alaradi - Web Developer & Designer",
+  description: 'Full-stack web developer specializing in Next.js, React, and modern web technologies.',
+  keywords: ['web development', 'Next.js', 'React', 'portfolio', 'web design'],
+  authors: [{ name: 'Alaradi' }],
+  creator: 'Alaradi',
   icons: "/portfolio.svg",
 };
 

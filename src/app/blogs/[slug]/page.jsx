@@ -1,38 +1,33 @@
-'use client';
+"use client";
 
-import { useEffect, useState } from 'react';
-import { useParams } from 'next/navigation';
-import Link from 'next/link';
-import { Calendar, Clock, ArrowLeft } from 'lucide-react';
+import { useEffect, useState } from "react";
+import { useParams } from "next/navigation";
+import Link from "next/link";
+import { Calendar, Clock, ArrowLeft } from "lucide-react";
 
 export default function BlogPostPage() {
   const params = useParams();
   const slug = params?.slug;
-  
+
   const [post, setPost] = useState(null);
   const [Content, setContent] = useState(null);
   const [error, setError] = useState(null);
 
   useEffect(() => {
     if (!slug) return;
-    
+
     async function loadPost() {
       try {
-        console.log('Loading post with slug:', slug);
-        
         // Dynamically import the MDX file
         const mdxModule = await import(`../posts/${slug}.mdx`);
-        
-        console.log('MDX module loaded:', mdxModule);
-        
         setContent(() => mdxModule.default);
         setPost(mdxModule.frontmatter || {});
       } catch (err) {
-        console.error('Error loading post:', err);
+        console.error("Error loading post:", err);
         setError(err.message);
       }
     }
-    
+
     loadPost();
   }, [slug]);
 
@@ -55,7 +50,7 @@ export default function BlogPostPage() {
             The blog post &quot;{slug}&quot; could not be loaded.
           </p>
           <p className="text-sm text-tertiary mb-8">Error: {error}</p>
-          <Link 
+          <Link
             href="/blogs"
             className="inline-block bg-accent hover:bg-[#fb923c] text-white px-8 py-3 rounded-lg font-semibold transition-all"
           >
@@ -78,11 +73,10 @@ export default function BlogPostPage() {
 
   return (
     <div className="min-h-screen bg-primary text-primary">
-      
       {/* Back Button */}
       <section className="pt-24 pb-8 px-6">
         <div className="max-w-4xl mx-auto">
-          <Link 
+          <Link
             href="/blogs"
             className="inline-flex items-center gap-2 text-secondary hover:text-accent transition-colors mb-8"
           >
@@ -104,7 +98,7 @@ export default function BlogPostPage() {
 
           {/* Title */}
           <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-            {post.title || 'Untitled Post'}
+            {post.title || "Untitled Post"}
           </h1>
 
           {/* Meta Info */}
@@ -112,14 +106,16 @@ export default function BlogPostPage() {
             {post.date && (
               <div className="flex items-center gap-2">
                 <Calendar size={18} />
-                <span>{new Date(post.date).toLocaleDateString('en-US', { 
-                  year: 'numeric', 
-                  month: 'long', 
-                  day: 'numeric' 
-                })}</span>
+                <span>
+                  {new Date(post.date).toLocaleDateString("en-US", {
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric",
+                  })}
+                </span>
               </div>
             )}
-            
+
             {post.readTime && (
               <div className="flex items-center gap-2">
                 <Clock size={18} />
@@ -149,7 +145,7 @@ export default function BlogPostPage() {
             <p className="text-secondary mb-6">
               Check out more posts on web development, design, and business.
             </p>
-            <Link 
+            <Link
               href="/blogs"
               className="inline-block bg-accent hover:bg-[#fb923c] text-white px-8 py-3 rounded-lg font-semibold transition-all"
             >

@@ -5,7 +5,7 @@ import Image from "next/image";
 function Navbar() {
   return (
     <div className=" mx-auto bg-bg-secondary shadow-white/5 shadow-md min-w-full sticky top-0 z-10">
-      <div className="flex items-center justify-between flex-row py-8 container mx-auto">
+      <nav aria-label="Main navigation" className="flex items-center justify-between flex-row py-8 container mx-auto">
         <div>
           <Links path="/" styleType="link">
             <div className="w-36">
@@ -27,7 +27,7 @@ function Navbar() {
             <Custbutton btn="Contact" styleType='smCta' />
           </Links>
         </div>
-      </div>
+      </nav>
     </div>
   );
 }

@@ -188,7 +188,7 @@ export default function ServicesPage() {
               </Links>
               
               <Links path="/about" name="">
-                <Custbutton styleType="chostBtn" btn="Learn About Me" />
+                <Custbutton styleType="chostBtn" btn="About Me" />
               </Links>
             </div>
           </div>

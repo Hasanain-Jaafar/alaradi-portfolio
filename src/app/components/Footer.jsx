@@ -63,14 +63,14 @@ function Footer() {
         {/*  =============== Links*/}
         <div className="flex flex-col gap-2 items-center justify-center">
           <h6 className="mt-3">Helpful Links</h6>
-          <Links path="/pages/about" name="About" styleType="footerLink" />
+          <Links path="/about" name="About" styleType="footerLink" />
           <Links
-            path="/pages/services"
+            path="/services"
             name="Services"
             styleType="footerLink"
           />
-          <Links path="/pages/blogs" name="Blogs" styleType="footerLink" />
-          <Links path="/pages/contact" name="Contact" styleType="footerLink" />
+          <Links path="/blogs" name="Blogs" styleType="footerLink" />
+          <Links path="/contact" name="Contact" styleType="footerLink" />
         </div>
         {/* =============== GET IN TOUCH SIDE */}
         <div className="w-2/6">
