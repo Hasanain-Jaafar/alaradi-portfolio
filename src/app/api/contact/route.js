@@ -7,7 +7,7 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 // For production with multiple servers, use Redis or database
 const submissions = new Map();
 
-// Clean up old entries every hour
+ // |> Clean up old entries every hour 
 setInterval(() => {
   const oneHourAgo = Date.now() - 3600000;
   for (const [email, times] of submissions.entries()) {
@@ -66,7 +66,7 @@ export async function POST(request) {
 
     // Send email using Resend
     const data = await resend.emails.send({
-      from: "Contact Form <onboarding@resend.dev>",
+      from: "Contact Form <noreply@hasseonline.cloud>",
       to: "hassanainadm@gmail.com",
       replyTo: email,
       subject: `Contact Form: ${subject}`,

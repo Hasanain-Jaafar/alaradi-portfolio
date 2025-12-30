@@ -70,7 +70,7 @@ export async function POST(request) {
 
     // Send welcome email
     await resend.emails.send({
-      from: "Alaradi <onboarding@resend.dev>",
+      from: "Alaradi <newsletter@@hasseonline.cloud>",
       to: "hassanainadm@gmail.com",
       subject: "Welcome to Alaradi Newsletter!",
       html: `
