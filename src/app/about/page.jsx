@@ -1,5 +1,5 @@
-import Links from "../../components/Links";
-import Custbutton from "../../components/Button";
+import Links from "../components/Links";
+import Custbutton from "../components/Button";
 import { Send } from "lucide-react";
 
 export default function AboutPage() {

@@ -2,7 +2,8 @@ import ServiceCard from "@/app/components/ServiceCard";
 import Cta from "@/app/components/Cta";
 import Stats from "@/app/components/Status";
 import Custbutton from "@/app/components/Button";
-import { ArrowRight, Code, Palette, Zap } from "lucide-react";
+import { Code, Palette, Zap } from "lucide-react";
+import Links from "./components/Links";
 
 export default function Home() {
   return (
@@ -26,10 +27,13 @@ export default function Home() {
             </p>
 
             <div className="flex gap-4 font-heading">
-              <button className="bg-bg-accent hover:bg-orange-700 text-text-primary px-8 py-4 font-semibold tracking-wide  transition-all duration-400 ease-in-out shadow-lg shadow-[#ffffff5c]/20 flex items-center gap-2 cursor-pointer hover:text-text-secondary font-heading">
-                View My Work <ArrowRight size={20} />
-              </button>
-              <Custbutton btn="Skills" styleType="chostBtn"/> 
+              
+              <Links path="/myWork" styleType="link">
+                <Custbutton btn="View My Work" styleType="bgCta" />
+              </Links>
+              <Links path="/services" styleType="link">
+                <Custbutton btn="Services" styleType="chostBtn" />
+              </Links>
             </div>
           </div>
         </div>

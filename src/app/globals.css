@@ -14,6 +14,7 @@
   --color-text-primary: #e5e5e5;
   --color-text-secondary: #a3a3a3;
   --color-text-accent: var(--color-bg-accent);
+  --color-text-accent-light: #92360f;
   /*  */
   /* |>===== TEXT COLORS ===== */
   --color-border-subtle: #262626;
@@ -97,6 +98,11 @@
     line-height: 160%;
     font-weight: 400;
     max-width: 60ch;
+  }
+  .social:hover {
+    border-radius: 100%;
+    transition: all 300ms ease-out;
+    box-shadow: 0 3px 5px var(--color-accent);
   }
 }
 @layer utilities {

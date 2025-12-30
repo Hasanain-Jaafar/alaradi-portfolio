@@ -1,6 +1,6 @@
 import { Code, Palette, Zap, Smartphone, Database, Search } from 'lucide-react';
-import Links from "../../components/Links";
-import Custbutton from "../../components/Button";
+import Links from "../components/Links";
+import Custbutton from "../components/Button";
 
 export default function ServicesPage() {
   const services = [
