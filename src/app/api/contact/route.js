@@ -66,7 +66,7 @@ export async function POST(request) {
 
     // Send email using Resend
     const data = await resend.emails.send({
-      from: "Contact Form <noreply@hasseonline.cloud>",
+      from: "Contact <noreply@hasseonline.cloud>",
       to: "hassanainadm@gmail.com",
       replyTo: email,
       subject: `Contact Form: ${subject}`,

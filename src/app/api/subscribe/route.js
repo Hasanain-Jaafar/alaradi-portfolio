@@ -70,7 +70,7 @@ export async function POST(request) {
 
     // Send welcome email
     await resend.emails.send({
-      from: "Alaradi Newsletter <newsletter@@hasseonline.cloud>",
+      from: "Alaradi <newsletter@@hasseonline.cloud>",
       to: email,
       subject: " 🎉 New Newsletter Subscriber!",
       html: `
