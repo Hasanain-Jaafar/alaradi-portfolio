@@ -68,7 +68,7 @@ export async function POST(request) {
       console.error("Error saving subscriber:", error);
     }
 
-    // Send welcome email
+    // |> Send welcome email
     await resend.emails.send({
       from: "Alaradi <newsletter@hasseonline.cloud>",
       to: email,
@@ -91,7 +91,7 @@ export async function POST(request) {
                 <td style="padding: 40px 40px 20px 40px;">
                   <div style="width: 80px; height: 4px; background-color: #f97316; margin-bottom: 30px;"></div>
                   <h1 style="color: #e5e5e5; font-size: 32px; margin: 0; font-weight: bold;">
-                    Welcome to Alaradi!
+                    Welcome to Alaradi Newsletter!
                   </h1>
                 </td>
               </tr>
@@ -142,7 +142,7 @@ export async function POST(request) {
                   <table cellpadding="0" cellspacing="0" style="margin: 30px 0;">
                     <tr>
                       <td>
-                        <a href="https://alaradihassan.netlify.app/blogs" 
+                        <a href="https://hasseonline.cloud/blogs" 
                            style="display: inline-block; background-color: #f97316; color: #ffffff; 
                                   padding: 14px 32px; text-decoration: none; font-weight: bold; 
                                   font-size: 16px;">

@@ -101,21 +101,21 @@ function Footer() {
 
           {/* Helpful Links */}
           <div className="flex flex-col">
-            <h6 className="text-text-primary mb-4 text-lg font-semibold">
+            <h6 className="text-text-secondary mb-4 text-lg font-semibold">
               Helpful Links
             </h6>
             <div className="flex flex-col gap-3">
               <Links path="/about" name="About" styleType="footerLink" />
               <Links path="/services" name="Services" styleType="footerLink" />
               <Links path="/blogs" name="Blogs" styleType="footerLink" />
-              <Links path="/myWork" name="My Work" styleType="link" />
+              <Links path="/myWork" name="My Work" styleType="footerLink" />
               <Links path="/contact" name="Contact" styleType="footerLink" />
             </div>
           </div>
 
           {/* Newsletter & Social */}
           <div className="flex flex-col">
-            <h5 className="text-text-primary mb-4 text-xl font-bold">
+            <h5 className="text-text-secondary mb-4 text-xl font-bold">
               Get In Touch!
             </h5>
 
@@ -133,7 +133,7 @@ function Footer() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="flex justify-center items-center gap-2 bg-bg-accent px-4 py-2 text-white shadow-md cursor-pointer transition-all duration-300 ease-in-out hover:bg-orange-700 text-sm md:text-base whitespace-nowrap min-w-30 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="flex justify-center items-center gap-2 bg-bg-accent px-4 py-2 text-txt-btn shadow-md cursor-pointer transition-all duration-300 ease-in-out hover:bg-text-accent-light text-sm md:text-base whitespace-nowrap min-w-30 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {isSubmitting ? "Sending..." : "Subscribe"}
                 </button>
@@ -154,7 +154,7 @@ function Footer() {
               )}
             </form>
 
-            <h6 className="text-text-primary mb-3 text-lg font-semibold">
+            <h6 className="text-text-secondary mb-3 text-lg font-semibold">
               Follow Us
             </h6>
             <div className="flex items-center gap-4">
@@ -230,7 +230,7 @@ function Footer() {
 
         {/* Copyright */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
-          <p className="text-text-secondary">
+          <p className="text-text-secondary text-sm">
             &copy; 2025 Copyright Alaradi. All Rights Reserved.
           </p>
 

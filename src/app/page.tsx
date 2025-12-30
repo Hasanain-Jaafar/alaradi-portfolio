@@ -4,6 +4,7 @@ import Stats from "@/app/components/Status";
 import Custbutton from "@/app/components/Button";
 import { Code, Palette, Zap } from "lucide-react";
 import Links from "./components/Links";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -44,7 +45,9 @@ export default function Home() {
       <section className="px-6 pt-12 md:pt-20 pb-4" id="services">
         <div className="mx-auto my-0 max-w-7xl">
           <div className="mb-12 md:mb-16">
-            <h2 className="mb-4 text-3xl sm:text-4xl md:text-5xl font-bold">What I Do</h2>
+            <h2 className="mb-4 text-3xl sm:text-4xl md:text-5xl font-bold">
+              What I Do
+            </h2>
             <h6 className="max-w-lg text-base sm:text-lg text-text-secondary">
               Specialized in creating high-quality digital solutions that drive
               results
@@ -53,25 +56,31 @@ export default function Home() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {/* Service Card 1 */}
-            <ServiceCard
-              icon={<Code size={28} />}
-              title="Web Development"
-              description="Building fast, scalable web applications with modern frameworks like Next.js, React, and Tailwind CSS."
-            />
+            <Link href="/services/web-development">
+              <ServiceCard
+                icon={<Code size={28} />}
+                title="Web Development"
+                description="Building fast, scalable web applications with modern frameworks like Next.js, React, and Tailwind CSS."
+              />
+            </Link>
 
             {/* Service Card 2 */}
-            <ServiceCard
-              icon={<Palette size={28} />}
-              title="UI/UX Design"
-              description="Crafting user-centered designs that solve real problems and create delightful experiences."
-            />
+            <Link href="/services/ui-ux-design">
+              <ServiceCard
+                icon={<Palette size={28} />}
+                title="UI/UX Design"
+                description="Crafting user-centered designs that solve real problems and create delightful experiences."
+              />
+            </Link>
 
             {/* Service Card 3 */}
-            <ServiceCard
-              icon={<Zap size={28} />}
-              title="Performance Optimization"
-              description="Optimizing websites for speed, SEO, and conversion to maximize your business impact."
-            />
+            <Link href="/services/performance-optimization">
+              <ServiceCard
+                icon={<Zap size={28} />}
+                title="Performance"
+                description="Optimizing websites for speed, SEO, and conversion to maximize your business impact."
+              />
+            </Link>
           </div>
         </div>
       </section>

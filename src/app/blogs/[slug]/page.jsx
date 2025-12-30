@@ -138,17 +138,12 @@ export default function BlogPostPage() {
       {/* Back to Blog CTA */}
       <section className="pb-20 px-6">
         <div className="max-w-4xl mx-auto">
-          <div className="bg-secondary border border-subtle rounded-lg p-8 text-center">
-            <h3 className="font-display text-2xl font-bold mb-4">
-              Read More Articles
-            </h3>
-            <p className="text-secondary mb-6">
+          <div className="bg-bg-secondary border border-subtle p-8 text-center">
+            <h3 className=" text-2xl mb-4">Read More Articles</h3>
+            <p className="mb-6">
               Check out more posts on web development, design, and business.
             </p>
-            <Link
-              href="/blogs"
-              className="inline-block bg-accent hover:bg-[#fb923c] text-white px-8 py-3 rounded-lg font-semibold transition-all"
-            >
+            <Link href="/blogs" className="mdbtn">
               Back to Blog
             </Link>
           </div>

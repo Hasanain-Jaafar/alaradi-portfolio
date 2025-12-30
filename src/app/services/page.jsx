@@ -68,10 +68,10 @@ export default function ServicesPage() {
             {services.map((service, index) => (
               <div 
                 key={index}
-                className="bg-bg-secondary p-8 rounded-lg border border-subtle hover:border-accent transition-all group"
+                className="bg-bg-secondary p-8  border border-subtle hover:border-text-accent-light transition-all group"
               >
                 {/*// > Icon */}
-                <div className="w-16 h-16 bg-bg-accent/10 rounded-lg flex items-center justify-center mb-6 text-accent group-hover:bg-accent/20 transition-all">
+                <div className="w-16 h-16 bg-bg-accent/10  flex items-center justify-center mb-6 text-accent group-hover:bg-accent/20 transition-all">
                   {service.icon}
                 </div>
 
@@ -171,7 +171,7 @@ export default function ServicesPage() {
       {/*// > CTA Section */}
       <section className="py-20 px-6">
         <div className="max-w-7xl mx-auto">
-          <div className="bg-secondary border border-subtle rounded-2xl p-12 md:p-16 text-center">
+          <div className="bg-bg-secondary border border-subtle p-12 md:p-16 text-center">
             <h2 className="font-display text-4xl md:text-5xl font-bold mb-6">
               Ready to Start Your Project?
             </h2>
@@ -183,7 +183,6 @@ export default function ServicesPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Links path="/contact" name="">
                 <Custbutton styleType="bgCta" btn="Get in Touch">
-                  <span>→</span>
                 </Custbutton>
               </Links>
               
