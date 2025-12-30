@@ -15,10 +15,10 @@ export default function AboutPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-bg-primary text-text-primary">
+    <div className="container mx-auto flex flex-col gap-4">
       {/* Hero Section */}
       <section className="pt-32 pb-12 px-6">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           {/* Orange accent bar */}
           <div className="w-20 h-1 bg-accent rounded-full mb-8"></div>
 
@@ -26,7 +26,7 @@ export default function AboutPage() {
             About Me
           </h1>
 
-          <p className="mb-8">
+          <p className="mb-8 max-w-3xl">
             I&apos;m a creative developer passionate about building modern web
             experiences that combine beautiful design with powerful
             functionality.
@@ -36,10 +36,10 @@ export default function AboutPage() {
 
       {/* Story Section */}
       <section className="py-12 px-6">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <h3 className="mb-6 ">My Journey</h3>
 
-          <div className="space-y-6 text-secondary text-lg leading-relaxed">
+          <div className="space-y-6 text-secondary text-lg leading-relaxed max-w-3xl">
             <p>
               I started my journey in web development 5 years ago, driven by a
               passion for creating digital experiences that make a real impact.
@@ -65,7 +65,7 @@ export default function AboutPage() {
 
       {/* Skills Section */}
       <section className="py-12 px-6">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <div className="mb-12">
             <div className="w-20 h-1 bg-accent rounded-full mb-6"></div>
             <h2>Skills & Tools</h2>
@@ -86,7 +86,7 @@ export default function AboutPage() {
 
       {/* CTA Section */}
       <section className="py-20 px-6">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <div className="bg-bg-secondary border border-subtle p-12 md:p-16 text-center">
             <h2 className="font-display text-4xl md:text-5xl font-bold mb-6">
               Let&apos;s Work Together

@@ -25,6 +25,7 @@ function Navbar() {
                 width={395}
                 height={108}
                 alt="Alaradi Logo"
+                priority
               />
             </div>
           </Links>

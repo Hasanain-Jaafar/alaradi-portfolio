@@ -47,14 +47,14 @@ export default function ServicesPage() {
       
       {/*// > Hero Section */}
       <section className="pt-32 pb-12 px-6">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <div className="w-20 h-1 bg-accent rounded-full mb-8"></div>
           
           <h1 className="font-display text-5xl md:text-6xl font-bold mb-6 leading-tight">
             Services
           </h1>
           
-          <p className="text-xl text-secondary leading-relaxed mb-8">
+          <p className="text-xl max-w-4xl text-text-secondary mb-8 ">
             Specialized in creating high-quality digital solutions that drive real results. 
             From concept to launch, I help bring your vision to life with modern web technologies.
           </p>
@@ -63,7 +63,7 @@ export default function ServicesPage() {
 
       {/*// > Services Grid */}
       <section className="py-12 px-6">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2  gap-8">
             {services.map((service, index) => (
               <div 

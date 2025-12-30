@@ -1,4 +1,3 @@
-import { Send } from "lucide-react";
 import Links from "./Links";
 import Custbutton from "./Button";
 
@@ -17,9 +16,7 @@ function Cta() {
             </p>
             <div className="flex justify-center  ">
               <Links path="/contact" styleType="link">
-                <Custbutton btn="Get In Touch" styleType="bgCta">
-                  <Send size={20} />
-                </Custbutton>
+                <Custbutton btn="Get In Touch" styleType="bgCta"/>
               </Links>
             </div>
           </div>

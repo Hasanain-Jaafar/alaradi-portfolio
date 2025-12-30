@@ -63,10 +63,10 @@ export default function WorkPage() {
   const otherProjects = projects.filter((p) => !p.featured);
 
   return (
-    <div className="min-h-screen bg-primary text-primary">
+    <div className="min-h-screen bg-bg-primary text-primary">
       {/* Hero Section */}
       <section className="pt-32 pb-12 px-6">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <div className="w-20 h-1 bg-accent mb-8"></div>
 
           <h1 className="font-heading text-5xl md:text-6xl mb-6 leading-tight">
@@ -83,7 +83,7 @@ export default function WorkPage() {
 
       {/* Featured Projects */}
       <section className="py-12 px-6">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <div className="mb-12">
             <h2 className="text-3xl md:text-4xl mb-2">
               Featured Projects
@@ -173,7 +173,7 @@ export default function WorkPage() {
 
       {/* Other Project Grid */}
       <section className="py-12 px-6">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <div className="mb-12">
             <div className="w-20 h-1 bg-accent mb-6"></div>
             <h2 className="text-3xl md:text-4xl mb-2">
@@ -271,9 +271,8 @@ export default function WorkPage() {
             <p className="text-xl text-text-secondary mb-10 max-w-2xl mx-auto">
               Let&apos;s work together to bring your vision to life
             </p>
-            {/* // todo */}
             <Link
-              href="/pages/contact"
+              href="/contact"
               className="inline-flex items-center gap-3 bg-text-accent hover:bg-text-accent-light text-white px-10 py-4 font-semibold text-lg transition-all shadow-accent"
             >
               Start a Project <ArrowRight size={20} />

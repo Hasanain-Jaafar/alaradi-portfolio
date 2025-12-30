@@ -6,11 +6,11 @@ export default function BlogsPage() {
   const posts = getAllPosts();
 
   return (
-    <div className="min-h-screen bg-primary text-primary">
+    <div className="min-h-screen bg-bg-primary text-primary">
       
       {/* Hero Section */}
       <section className="pt-32 pb-12 px-6">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <div className="w-20 h-1 bg-accent rounded-full mb-8"></div>
           
           <h1 className="font-display text-5xl md:text-6xl font-bold mb-6 leading-tight">
