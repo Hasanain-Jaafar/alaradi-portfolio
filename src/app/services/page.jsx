@@ -50,9 +50,9 @@ export default function ServicesPage() {
         <div className="max-w-6xl mx-auto">
           <div className="w-20 h-1 bg-accent rounded-full mb-8"></div>
           
-          <h1 className="font-display text-5xl md:text-6xl font-bold mb-6 leading-tight">
+          <h2 className=" text-5xl md:text-6xl mb-6 leading-tight">
             Services
-          </h1>
+          </h2>
           
           <p className="text-xl max-w-4xl text-text-secondary mb-8 ">
             Specialized in creating high-quality digital solutions that drive real results. 

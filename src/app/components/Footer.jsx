@@ -236,12 +236,12 @@ function Footer() {
 
           <div className="flex gap-6">
             <Links
-              path="/privacy"
+              path="/pages/privacy"
               name="Privacy Policy"
               styleType="footerLink"
             />
             <Links
-              path="/terms"
+              path="/pages/terms"
               name="Terms & Condition"
               styleType="footerLink"
             />

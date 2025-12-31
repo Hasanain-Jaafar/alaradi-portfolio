@@ -28,7 +28,7 @@ const nextConfig: NextConfig = {
 
 
 const withMDX = createMDX({
-  // Leave options empty for now
+  
 });
 
 export default withMDX(nextConfig);

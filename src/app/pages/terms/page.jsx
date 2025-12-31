@@ -6,9 +6,9 @@ export default function TermsPage() {
         <div className="max-w-4xl mx-auto">
           <div className="w-20 h-1 bg-accent rounded-full mb-8"></div>
           
-          <h1 className="font-display text-5xl md:text-6xl font-bold mb-6 leading-tight">
+          <h2 className=" text-5xl md:text-6xl mb-6 leading-tight">
             Terms & Conditions
-          </h1>
+          </h2>
           
           <p className="text-secondary mb-4">
             Last updated: December 30, 2025

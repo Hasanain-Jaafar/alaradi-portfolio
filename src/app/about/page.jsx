@@ -22,9 +22,9 @@ export default function AboutPage() {
           {/* Orange accent bar */}
           <div className="w-20 h-1 bg-accent rounded-full mb-8"></div>
 
-          <h1 className="font-display text-5xl md:text-6xl font-bold mb-6 leading-tight">
+          <h2 className=" md:text-6xl font-bold mb-6 leading-tight">
             About Me
-          </h1>
+          </h2>
 
           <p className="mb-8 max-w-3xl">
             I&apos;m a creative developer passionate about building modern web

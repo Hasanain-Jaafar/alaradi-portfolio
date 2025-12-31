@@ -62,9 +62,9 @@ export default function PerformanceOptimizationPage() {
             <div className="w-20 h-1 bg-bg-accent"></div>
           </div>
           
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+          <h2 className="text-5xl md:text-6xl mb-6">
             Performance Optimization
-          </h1>
+          </h2>
           
           <p className="text-xl text-text-secondary leading-relaxed max-w-3xl">
             Speed matters. Optimizing websites for blazing-fast load times, better SEO rankings, 

@@ -8,18 +8,18 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="container mx-auto pt-8 flex flex-col gap-4">
+    <div className="container mx-auto pt-8 gap-4">
       {/* Hero Section */}
       <section className="pt-20 md:pt-32 pb-12 md:pb-20 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="max-w-4xl">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-text-primary font-bold mb-6 leading-tight">
+            <h2 className="sm:text-5xl md:text-6xl font-bold mb-6 leading-tight">
               Creative Developer
               <br />
-              <span className="text-text-primary">Building Bold</span>
+              <span className="text-text-secondary">Building Bold</span>
               <br />
               Digital Experiences
-            </h1>
+            </h2>
 
             <p className="text-base sm:text-lg md:text-xl text-text-secondary leading-relaxed mb-8 md:mb-10 max-w-2xl">
               I design and develop modern web applications that are fast,

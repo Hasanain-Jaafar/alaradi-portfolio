@@ -60,9 +60,9 @@ export default function UIUXDesignPage() {
             <div className="w-20 h-1 bg-bg-accent"></div>
           </div>
           
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+          <h2 className="text-5xl md:text-6xl mb-6">
             UI/UX Design
-          </h1>
+          </h2>
           
           <p className="text-xl text-text-secondary leading-relaxed max-w-3xl">
             Crafting user-centered designs that solve real problems and create delightful experiences. 

@@ -60,9 +60,9 @@ export default function WebDevelopmentPage() {
             <div className="w-20 h-1 bg-bg-accent"></div>
           </div>
           
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+          <h2 className="text-5xl md:text-6xl mb-6">
             Web Development
-          </h1>
+          </h2>
           
           <p className="text-xl text-text-secondary leading-relaxed max-w-3xl">
             Building fast, scalable, and modern web applications that drive results. 
@@ -106,10 +106,10 @@ export default function WebDevelopmentPage() {
 
       {/* Technologies */}
       <section className="py-20 px-6 bg-bg-secondary">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-6xl px-22 mx-auto">
           <h2 className="text-4xl font-bold mb-12">Technologies I Use</h2>
           
-          <div className="flex flex-wrap gap-4">
+          <div className="flex flex-wrap justify-center gap-4">
             {technologies.map((tech, index) => (
               <div
                 key={index}

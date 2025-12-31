@@ -75,9 +75,9 @@ export default function ContactPage() {
         <div className="max-w-6xl mx-auto">
           <div className="w-20 h-1 bg-accent rounded-full mb-8"></div>
 
-          <h1 className="font-display text-5xl md:text-6xl font-bold mb-6 leading-tight">
+          <h2 className=" text-5xl md:text-6xl mb-6 leading-tight">
             Get In Touch
-          </h1>
+          </h2>
 
           <p className="text-xl text-secondary leading-relaxed max-w-3xl">
             Have a project in mind? Let&apos;s discuss how we can work together
