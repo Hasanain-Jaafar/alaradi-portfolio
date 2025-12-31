@@ -1,6 +1,5 @@
 import Links from "../components/Links";
 import Custbutton from "../components/Button";
-import { Send } from "lucide-react";
 
 export default function AboutPage() {
   const skills = [
@@ -98,9 +97,7 @@ export default function AboutPage() {
 
             <div className="flex justify-center  ">
               <Links path="/contact" styleType="link">
-                <Custbutton btn="Get In Touch" styleType="bgCta">
-                  <Send size={20} />
-                </Custbutton>
+                <Custbutton btn="Get In Touch" styleType="bgCta"></Custbutton>
               </Links>
             </div>
           </div>
