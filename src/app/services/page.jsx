@@ -46,13 +46,13 @@ export default function ServicesPage() {
     <div className="min-h-screen bg-bg-primary text-text-primary">
       
       {/*// > Hero Section */}
-      <section className="pt-32 pb-12 px-6">
+      <section className="pt-20 pb-12 px-6">
         <div className="max-w-6xl mx-auto">
           <div className="w-20 h-1 bg-accent rounded-full mb-8"></div>
           
-          <h2 className=" text-5xl md:text-6xl mb-6 leading-tight">
+          <h1 className="mb-12">
             Services
-          </h2>
+          </h1>
           
           <p className="text-xl max-w-4xl text-text-secondary mb-8 ">
             Specialized in creating high-quality digital solutions that drive real results. 
@@ -171,7 +171,7 @@ export default function ServicesPage() {
       {/*// > CTA Section */}
       <section className="py-20 px-6">
         <div className="max-w-7xl mx-auto">
-          <div className="bg-bg-secondary border border-subtle p-12 md:p-16 text-center">
+          <div className="cta border border-text-secondary p-12 md:p-16 text-center">
             <h2 className="font-display text-4xl md:text-5xl font-bold mb-6">
               Ready to Start Your Project?
             </h2>

@@ -9,13 +9,11 @@ export default function BlogsPage() {
   return (
     <div className="min-h-screen bg-bg-primary text-primary">
       {/* Hero Section */}
-      <section className="pt-32 pb-6 px-6">
+      <section className="pt-20 pb-6 px-6">
         <div className="max-w-6xl mx-auto">
           <div className="w-20 h-1 bg-accent mb-8"></div>
 
-          <h2 className="md:text-6xl mb-6 leading-tight">
-            Blogs Gallery
-          </h2>
+          <h1 className="mb-12">Blogs Gallery</h1>
 
           <p className="text-xl max-w-2xl text-secondary leading-relaxed">
             Thoughts on web development, design, business, and everything in

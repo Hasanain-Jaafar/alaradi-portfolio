@@ -4,8 +4,14 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { Mail, Phone, MapPin, Send, CheckCircle, XCircle, ContactRound } from "lucide-react";
-import Links from "../components/Links";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Send,
+  CheckCircle,
+  XCircle,
+} from "lucide-react";
 import { siteConfig } from "@/config/site";
 import Link from "next/link";
 // Form validation schema
@@ -71,13 +77,11 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen bg-primary text-primary">
       {/* Hero Section */}
-      <section className="pt-32 pb-12 px-6">
+      <section className="pt-20 pb-12 px-6">
         <div className="max-w-6xl mx-auto">
           <div className="w-20 h-1 bg-accent rounded-full mb-8"></div>
 
-          <h2 className=" text-5xl md:text-6xl mb-6 leading-tight">
-            Get In Touch
-          </h2>
+          <h1 className="mb-12">Get In Touch</h1>
 
           <p className="text-xl text-secondary leading-relaxed max-w-3xl">
             Have a project in mind? Let&apos;s discuss how we can work together
@@ -102,7 +106,7 @@ export default function ContactPage() {
                 </p>
               </div>
 
-              <div className="space-y-6">
+              <div className="space-y-6 flex flex-col gap-8">
                 {/* Email */}
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center text-accent shrink-0">
@@ -145,82 +149,8 @@ export default function ContactPage() {
                     <p className="text-secondary">{siteConfig.location}</p>
                   </div>
                 </div>
-              {/* Social Links */}
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center text-accent shrink-0">
-                <ContactRound size={24} /></div>
-                <div>
-                  <h4 className="font-semibold mb-4">Follow Me</h4>
-                  <div className="flex items-center gap-4">
-                    {/* Facebook */}
-                    <Links path={siteConfig.social.facebook} styleType="link">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width={28}
-                        height={28}
-                        viewBox="0 0 16 16"
-                        className="hover:opacity-70 transition-opacity"
-                      >
-                        <path
-                          fill="#92360f"
-                          d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131c.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"
-                        />
-                      </svg>
-                    </Links>
-
-                    {/* YouTube */}
-                    <Links path={siteConfig.social.youtube} styleType="link">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width={32}
-                        height={32}
-                        viewBox="0 0 20 20"
-                        className="hover:opacity-70 transition-opacity"
-                      >
-                        <path
-                          fill="#92360f"
-                          d="M11.603 9.833L9.357 8.785C9.161 8.694 9 8.796 9 9.013v1.974c0 .217.161.319.357.228l2.245-1.048c.197-.092.197-.242.001-.334M10 .4C4.698.4.4 4.698.4 10s4.298 9.6 9.6 9.6s9.6-4.298 9.6-9.6S15.302.4 10 .4m0 13.5c-4.914 0-5-.443-5-3.9s.086-3.9 5-3.9s5 .443 5 3.9s-.086 3.9-5 3.9"
-                        />
-                      </svg>
-                    </Links>
-
-                    {/* LinkedIn */}
-                    <Links path={siteConfig.social.linkedin} styleType="link">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width={32}
-                        height={32}
-                        viewBox="0 0 20 20"
-                        className="hover:opacity-70 transition-opacity"
-                      >
-                        <path
-                          fill="#92360f"
-                          d="M10 .4C4.698.4.4 4.698.4 10s4.298 9.6 9.6 9.6s9.6-4.298 9.6-9.6S15.302.4 10 .4M7.65 13.979H5.706V7.723H7.65zm-.984-7.024c-.614 0-1.011-.435-1.011-.973c0-.549.409-.971 1.036-.971s1.011.422 1.023.971c0 .538-.396.973-1.048.973m8.084 7.024h-1.944v-3.467c0-.807-.282-1.355-.985-1.355c-.537 0-.856.371-.997.728c-.052.127-.065.307-.065.486v3.607H8.814v-4.26c0-.781-.025-1.434-.051-1.996h1.689l.089.869h.039c.256-.408.883-1.01 1.932-1.01c1.279 0 2.238.857 2.238 2.699z"
-                        />
-                      </svg>
-                    </Links>
-
-                    {/* Instagram */}
-                    <Links path={siteConfig.social.instagram} styleType="link">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width={34}
-                        height={34}
-                        viewBox="0 0 20 20"
-                        className="hover:opacity-70 transition-opacity"
-                      >
-                        <path
-                          fill="#92360f"
-                          d="M13 10a3 3 0 1 1-6 0q.001-.257.049-.5H6v3.997c0 .278.225.503.503.503h6.995a.503.503 0 0 0 .502-.503V9.5h-1.049q.048.243.049.5m-3 2a2 2 0 1 0-.001-4.001A2 2 0 0 0 10 12m2.4-4.1h1.199a.3.3 0 0 0 .301-.3V6.401a.3.3 0 0 0-.301-.301H12.4a.3.3 0 0 0-.301.301V7.6c.001.165.136.3.301.3M10 .4A9.6 9.6 0 0 0 .4 10a9.6 9.6 0 0 0 9.6 9.6a9.6 9.6 0 0 0 9.6-9.6A9.6 9.6 0 0 0 10 .4m5 13.489C15 14.5 14.5 15 13.889 15H6.111C5.5 15 5 14.5 5 13.889V6.111C5 5.5 5.5 5 6.111 5h7.778C14.5 5 15 5.5 15 6.111z"
-                        />
-                      </svg>
-                    </Links>
-                  </div>
-                </div>
               </div>
             </div>
-              </div>
-
 
             {/* Contact Form - Right Side */}
             <div className="md:col-span-3">
@@ -245,7 +175,7 @@ export default function ContactPage() {
                       {...register("name")}
                       type="text"
                       id="name"
-                      className="w-full bg-primary text-primary px-4 py-3 rounded-lg border border-subtle focus:outline-none focus:border-accent transition-colors"
+                      className="w-full cta text-primary px-4 py-3  border border-subtle focus:outline-none focus:border-accent transition-colors"
                       placeholder="Your name"
                     />
                     {errors.name && (
@@ -267,7 +197,7 @@ export default function ContactPage() {
                       {...register("email")}
                       type="email"
                       id="email"
-                      className="w-full bg-primary text-primary px-4 py-3 rounded-lg border border-subtle focus:outline-none focus:border-accent transition-colors"
+                      className="w-full cta text-primary px-4 py-3  border border-subtle focus:outline-none focus:border-accent transition-colors"
                       placeholder="your@email.com"
                     />
                     {errors.email && (
@@ -289,7 +219,7 @@ export default function ContactPage() {
                       {...register("subject")}
                       type="text"
                       id="subject"
-                      className="w-full bg-primary text-primary px-4 py-3 rounded-lg border border-subtle focus:outline-none focus:border-accent transition-colors"
+                      className="w-full cta text-primary px-4 py-3  border border-subtle focus:outline-none focus:border-accent transition-colors"
                       placeholder="What's this about?"
                     />
                     {errors.subject && (
@@ -311,7 +241,7 @@ export default function ContactPage() {
                       {...register("message")}
                       id="message"
                       rows="6"
-                      className="w-full bg-primary text-primary px-4 py-3 rounded-lg border border-subtle focus:outline-none focus:border-accent transition-colors resize-none"
+                      className="w-full cta text-primary px-4 py-3  border border-subtle focus:outline-none focus:border-accent transition-colors resize-none"
                       placeholder="Tell me about your project..."
                     />
                     {errors.message && (

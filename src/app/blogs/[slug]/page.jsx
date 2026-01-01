@@ -47,24 +47,25 @@ export default async function BlogPostPage({ params }) {
           </h2>
 
           {/* Meta Info */}
-          <div className="flex items-center gap-6 text-text-secondary mb-8">
-            <div className="flex items-center gap-2">
-              <Calendar size={18} />
-              <span>
-                {new Date(post.date).toLocaleDateString("en-US", {
-                  year: "numeric",
-                  month: "long",
-                  day: "numeric",
-                })}
-              </span>
-            </div>
-
-            {post.readTime && (
+          <div className="flex items-center flex-wrap gap-6 text-text-secondary mb-8">
+            <div className="flex ">
               <div className="flex items-center gap-2">
-                <Clock size={18} />
-                <span>{post.readTime} min read</span>
+                <Calendar size={18} />
+                <span>
+                  {new Date(post.date).toLocaleDateString("en-US", {
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric",
+                  })}
+                </span>
               </div>
-            )}
+              {post.readTime && (
+                <div className="flex items-center gap-2">
+                  <Clock size={18} />
+                  <span>{post.readTime} min read</span>
+                </div>
+              )}
+            </div>
             {/* Share Buttons */}
             <ShareButtons title={post.title} url={postUrl} />
           </div>

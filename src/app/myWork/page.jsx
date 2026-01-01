@@ -65,13 +65,11 @@ export default function WorkPage() {
   return (
     <div className="min-h-screen bg-bg-primary text-primary">
       {/* Hero Section */}
-      <section className="pt-32 pb-12 px-6">
+      <section className="pt-20 pb-12 px-6">
         <div className="max-w-6xl mx-auto">
           <div className="w-20 h-1 bg-accent mb-8"></div>
 
-          <h2 className="text-5xl md:text-6xl mb-6 leading-tight">
-            My Work
-          </h2>
+          <h1 className="mb-12">My Work</h1>
 
           <p className="text-xl text-secondary leading-relaxed max-w-3xl">
             A collection of projects showcasing web development, UI/UX design,
@@ -85,9 +83,7 @@ export default function WorkPage() {
       <section className="py-12 px-6">
         <div className="max-w-6xl mx-auto">
           <div className="mb-12">
-            <h2 className="text-3xl md:text-4xl mb-2">
-              Featured Projects
-            </h2>
+            <h2 className="text-3xl md:text-4xl mb-2">Featured Projects</h2>
             <p className="text-secondary">
               Highlighting my most impactful work
             </p>
@@ -176,12 +172,8 @@ export default function WorkPage() {
         <div className="max-w-6xl mx-auto">
           <div className="mb-12">
             <div className="w-20 h-1 bg-accent mb-6"></div>
-            <h2 className="text-3xl md:text-4xl mb-2">
-              More Project
-            </h2>
-            <p>
-              Additional work across different technologies
-            </p>
+            <h2 className="text-3xl md:text-4xl mb-2">More Project</h2>
+            <p>Additional work across different technologies</p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
@@ -222,7 +214,7 @@ export default function WorkPage() {
                     {projects.tags.map((tag, idx) => (
                       <p
                         key={idx}
-                        className="px-2 py-1 bg-text-secondary w-26 text-center text-bg-primary text-xs "
+                        className="px-2 py-1 bg-text-secondary md:w-40 text-center text-bg-primary text-base "
                       >
                         {tag}
                       </p>
@@ -263,10 +255,8 @@ export default function WorkPage() {
       {/* CTA Section */}
       <section className="py-20 px-6">
         <div className="max-w-7xl mx-auto">
-          <div className="bg-bg-secondary border border-subtle  p-12 md:p-16 text-center">
-            <h2 className=" text-4xl md:text-5xl mb-6">
-              Like What You See?
-            </h2>
+          <div className="cta border border-text-secondary  p-12 md:p-16 text-center">
+            <h2 className=" text-4xl md:text-5xl mb-6">Like What You See?</h2>
 
             <p className="text-xl text-text-secondary mb-10 max-w-2xl mx-auto">
               Let&apos;s work together to bring your vision to life
