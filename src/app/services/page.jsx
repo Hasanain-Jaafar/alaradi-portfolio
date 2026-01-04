@@ -1,4 +1,4 @@
-import { Code, Palette, Zap, Smartphone, Database, Search } from 'lucide-react';
+import { Code, Palette, Zap, Smartphone, Database, Search } from "lucide-react";
 import Links from "../components/Links";
 import Custbutton from "../components/Button";
 
@@ -6,57 +6,87 @@ export default function ServicesPage() {
   const services = [
     {
       icon: <Code size={32} />,
-      title: 'Web Development',
-      description: 'Building fast, scalable web applications with modern frameworks like Next.js, React, and Tailwind CSS. Clean code, optimized performance.',
-      features: ['Next.js & React', 'Responsive Design', 'API Integration', 'Performance Optimization']
+      title: "Web Development",
+      description:
+        "Building fast, scalable web applications with modern frameworks like Next.js, React, and Tailwind CSS. Clean code, optimized performance.",
+      features: [
+        "Next.js & React",
+        "Responsive Design",
+        "API Integration",
+        "Performance Optimization",
+      ],
+      link: "/services/web-development",
     },
     {
       icon: <Palette size={32} />,
-      title: 'UI/UX Design',
-      description: 'Crafting user-centered designs that solve real problems and create delightful experiences. From wireframes to high-fidelity prototypes.',
-      features: ['User Research', 'Wireframing', 'Prototyping', 'Design Systems']
+      title: "UI/UX Design",
+      description:
+        "Crafting user-centered designs that solve real problems and create delightful experiences. From wireframes to high-fidelity prototypes.",
+      features: [
+        "User Research",
+        "Wireframing",
+        "Prototyping",
+        "Design Systems",
+      ],
+      link: "/services/ui-ux-design",
     },
     {
       icon: <Zap size={32} />,
-      title: 'Performance Optimization',
-      description: 'Optimizing websites for speed, SEO, and conversion to maximize your business impact. Fast sites rank higher and convert better.',
-      features: ['Speed Optimization', 'SEO', 'Core Web Vitals', 'Analytics']
+      title: "Performance Optimization",
+      description:
+        "Optimizing websites for speed, SEO, and conversion to maximize your business impact. Fast sites rank higher and convert better.",
+      features: ["Speed Optimization", "SEO", "Core Web Vitals", "Analytics"],
+      link: "/services/performance-optimization",
     },
     {
       icon: <Smartphone size={32} />,
-      title: 'Mobile-First Development',
-      description: 'Creating responsive experiences that work perfectly on any device. Mobile-first approach ensures optimal performance everywhere.',
-      features: ['Responsive Design', 'Touch Optimization', 'Progressive Web Apps', 'Cross-browser Testing']
+      title: "Mobile-First Development",
+      description:
+        "Creating responsive experiences that work perfectly on any device. Mobile-first approach ensures optimal performance everywhere.",
+      features: [
+        "Responsive Design",
+        "Touch Optimization",
+        "Progressive Web Apps",
+        "Cross-browser Testing",
+      ],
+      link: "/services/mobile-first",
     },
     {
       icon: <Database size={32} />,
-      title: 'Backend Development',
-      description: 'Building robust server-side solutions with Node.js, databases, and APIs. Scalable architecture for growing applications.',
-      features: ['Node.js', 'Database Design', 'REST APIs', 'Authentication']
+      title: "Backend Development",
+      description:
+        "Building robust server-side solutions with Node.js, databases, and APIs. Scalable architecture for growing applications.",
+      features: ["Node.js", "Database Design", "REST APIs", "Authentication"],
+      link: "/services/backend-development",
     },
     {
       icon: <Search size={32} />,
-      title: 'SEO & Marketing',
-      description: 'Implementing SEO best practices to help your site rank higher and reach more customers. Technical SEO and content optimization.',
-      features: ['Technical SEO', 'Keyword Research', 'Content Strategy', 'Analytics Setup']
+      title: "SEO & Marketing",
+      description:
+        "Implementing SEO best practices to help your site rank higher and reach more customers. Technical SEO and content optimization.",
+      features: [
+        "Technical SEO",
+        "Keyword Research",
+        "Content Strategy",
+        "Analytics Setup",
+      ],
+      link: "/services/seo-marketing",
     },
   ];
 
   return (
     <div className="min-h-screen bg-bg-primary text-text-primary">
-      
       {/*// > Hero Section */}
       <section className="pt-20 pb-12 px-6">
         <div className="max-w-6xl mx-auto">
           <div className="w-20 h-1 bg-accent rounded-full mb-8"></div>
-          
-          <h1 className="mb-12">
-            Services
-          </h1>
-          
+
+          <h1 className="mb-12">Services</h1>
+
           <p className="text-xl max-w-4xl text-text-secondary mb-8 ">
-            Specialized in creating high-quality digital solutions that drive real results. 
-            From concept to launch, I help bring your vision to life with modern web technologies.
+            Specialized in creating high-quality digital solutions that drive
+            real results. From concept to launch, I help bring your vision to
+            life with modern web technologies.
           </p>
         </div>
       </section>
@@ -66,7 +96,7 @@ export default function ServicesPage() {
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2  gap-8">
             {services.map((service, index) => (
-              <div 
+              <div
                 key={index}
                 className="bg-bg-secondary p-8  border border-subtle hover:border-text-accent-light transition-all group"
               >
@@ -88,7 +118,10 @@ export default function ServicesPage() {
                 {/*// > Features List */}
                 <ul className="space-y-2 mb-6">
                   {service.features.map((feature, idx) => (
-                    <li key={idx} className="text-text-secondary text-sm flex items-center gap-2">
+                    <li
+                      key={idx}
+                      className="text-text-secondary text-sm flex items-center gap-2"
+                    >
                       <span className="w-1.5 h-1.5 bg-accent rounded-full"></span>
                       {feature}
                     </li>
@@ -96,15 +129,11 @@ export default function ServicesPage() {
                 </ul>
 
                 {/*// > Learn More Link */}
-                <div className= 'mb-auto flex items-center gap-4'>
-                  <Links
-                    path="/contact"
-                    name="Get Started"
-                    styleType="link" >
+                <div className="mb-auto pt-2 flex items-center gap-4">
+                  <Links path={service.link} styleType="link">
+                    <Custbutton btn="Learn More" styleType="smCta"/>
                   </Links>
-                    <span className="text-accent text-4xl pb-2 inline-flex items-center transition-all">
-                      →
-                    </span>
+                  
                 </div>
               </div>
             ))}
@@ -135,7 +164,8 @@ export default function ServicesPage() {
                 Discovery
               </h3>
               <p className="text-secondary">
-                Understanding your goals, audience, and requirements through detailed discussions.
+                Understanding your goals, audience, and requirements through
+                detailed discussions.
               </p>
             </div>
 
@@ -148,7 +178,8 @@ export default function ServicesPage() {
                 Design & Build
               </h3>
               <p className="text-secondary">
-                Creating wireframes, prototypes, and building your solution with modern best practices.
+                Creating wireframes, prototypes, and building your solution with
+                modern best practices.
               </p>
             </div>
 
@@ -161,7 +192,8 @@ export default function ServicesPage() {
                 Launch & Support
               </h3>
               <p className="text-secondary">
-                Deploying your project and providing ongoing support to ensure continued success.
+                Deploying your project and providing ongoing support to ensure
+                continued success.
               </p>
             </div>
           </div>
@@ -175,17 +207,17 @@ export default function ServicesPage() {
             <h2 className="font-display text-4xl md:text-5xl font-bold mb-6">
               Ready to Start Your Project?
             </h2>
-            
+
             <p className="text-xl text-secondary mb-10 max-w-2xl mx-auto">
-              Let&apos;s discuss how these services can help bring your vision to life
+              Let&apos;s discuss how these services can help bring your vision
+              to life
             </p>
-            
+
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Links path="/contact" name="">
-                <Custbutton styleType="bgCta" btn="Get in Touch">
-                </Custbutton>
+                <Custbutton styleType="bgCta" btn="Get in Touch"></Custbutton>
               </Links>
-              
+
               <Links path="/about" name="">
                 <Custbutton styleType="chostBtn" btn="About Me" />
               </Links>

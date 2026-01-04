@@ -93,7 +93,7 @@ export default function WorkPage() {
             {featuredProjects.map((project, index) => (
               <article
                 key={index}
-                className="bg-bg-secondary rounded-lg border border-subtle overflow-hidden hover:border-text-accent-light transition-all group"
+                className="bg-bg-secondary  border border-subtle overflow-hidden hover:border-text-accent-light transition-all group"
               >
                 <div className="grid md:grid-cols-2 gap-0">
                   {/* Project Image */}
@@ -180,7 +180,7 @@ export default function WorkPage() {
             {otherProjects.map((projects, index) => (
               <article
                 key={index}
-                className="bg-bg-secondary rounded-lg border border-subtle overflow-hidden hover:border-text-accent-light transition-all group"
+                className="bg-bg-secondary  border border-subtle overflow-hidden hover:border-text-accent-light transition-all group"
               >
                 {/* Project Image */}
                 <div className="bg-tertiary aspect-video relative overflow-hidden">
