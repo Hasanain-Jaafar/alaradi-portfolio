@@ -72,7 +72,7 @@ export async function POST(request) {
     await resend.emails.send({
       from: "Alaradi <newsletter@hasseonline.cloud>",
       to: email,
-      subject: " 🎉 New Newsletter Subscriber!",
+      subject: " Welcome to Alaradi Newsletter! 🎉 So glad you're here!",
       html: `
     <!DOCTYPE html>
     <html>
@@ -100,7 +100,7 @@ export async function POST(request) {
               <tr>
                 <td style="padding: 20px 40px;">
                   <p style="color: #a3a3a3; font-size: 16px; line-height: 1.6; margin: 0 0 20px 0;">
-                    Thank you for subscribing to our newsletter. You're now part of the community!
+                    Hi there,
                   </p>
                   
                   <p style="color: #e5e5e5; font-size: 18px; font-weight: bold; margin: 30px 0 15px 0;">
@@ -135,7 +135,21 @@ export async function POST(request) {
                   </table>
                   
                   <p style="color: #a3a3a3; font-size: 16px; line-height: 1.6; margin: 30px 0 20px 0;">
-                    Stay tuned for exciting content!
+                    Thanks so much for signing up for the Alaradi Newsletter! 😊 I'm excited to have you join our community.
+                  </p>
+                  <p style="color: #a3a3a3; font-size: 16px; line-height: 1.6; margin: 30px 0 20px 0;">
+                  You'll get curated insights on web development, UI/UX design, performance optimization, and more – all to help you level up your skills and stay inspired.
+                  </p>
+                  <p style="color: #a3a3a3; font-size: 16px; line-height: 1.6; margin: 30px 0 20px 0;">
+                 For a deeper look at the content style, frequency, and themes, check out my website: https://hasseonline.cloud/ 🌐
+                  </p>
+                  <p style="color: #a3a3a3; font-size: 16px; line-height: 1.6; margin: 30px 0 20px 0;">
+                 Your first issue is coming soon – can't wait to share it with you!
+                  </p>
+                  <p style="color: #a3a3a3; font-size: 16px; line-height: 1.6; margin: 30px 0 20px 0;">
+                Warmly,<br>
+                Alaradi <br>
+                Creator, Alaradi Newsletter<br>
                   </p>
                   
                   <!-- CTA Button -->
@@ -160,11 +174,8 @@ export async function POST(request) {
                   <p style="color: #737373; font-size: 14px; line-height: 1.6; margin: 0;">
                     You're receiving this because you subscribed at 
                     <a href="https://alaradihassan.netlify.app" style="color: #f97316; text-decoration: none;">
-                      alaradi.com
+                      hasseonline.cloud
                     </a>
-                  </p>
-                  <p style="color: #737373; font-size: 12px; margin: 15px 0 0 0;">
-                    If you didn't subscribe, you can safely ignore this email.
                   </p>
                 </td>
               </tr>
@@ -177,9 +188,7 @@ export async function POST(request) {
     </html>
   `,
     });
-    //
-
-    //
+    
     return NextResponse.json({ success: true });
   } catch (error) {
     console.error("Error processing subscription:", error);

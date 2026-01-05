@@ -6,7 +6,6 @@ import { Calendar, Clock, ArrowLeft } from "lucide-react";
 import { getPostBySlug } from "@/lib/mdx";
 import MDXContent from "./MDXContent";
 
-// ... generateStaticParams and generateMetadata stay the same ...
 
 export default async function BlogPostPage({ params }) {
   const { slug } = await params;
@@ -17,10 +16,10 @@ export default async function BlogPostPage({ params }) {
   }
   const postUrl = `https://https://hasseonline.cloud//blogs/${slug}`;
   return (
-    <div className="min-h-screen bg-bg-primary text-text-primary">
+    <div className="min-h-screen bg-bg-primary text-text-primary max-w-full">
       {/* Back Button */}
-      <section className="pt-24 pb-8 px-6">
-        <div className="max-w-4xl mx-auto">
+      <section className="pt-24 pb-8 ">
+        <div className="">
           <Link
             href="/blogs"
             className="inline-flex items-center gap-2 text-text-secondary hover:text-text-accent transition-colors mb-8"
@@ -36,7 +35,7 @@ export default async function BlogPostPage({ params }) {
         <div className="max-w-4xl mx-auto">
           {/* Category */}
           {post.category && (
-            <span className="text-text-accent text-sm font-semibold mb-4 inline-block">
+            <span className="text-text-accent text-lg font-semibold mb-4 inline-block">
               {post.category}
             </span>
           )}
@@ -48,7 +47,7 @@ export default async function BlogPostPage({ params }) {
 
           {/* Meta Info */}
           <div className="flex items-center flex-wrap gap-6 text-text-secondary mb-8">
-            <div className="flex ">
+            <div className="flex gap-4">
               <div className="flex items-center gap-2">
                 <Calendar size={18} />
                 <span>
@@ -107,7 +106,7 @@ export default async function BlogPostPage({ params }) {
             <section className="pb-12 px-6">
               <div className="max-w-4xl mx-auto">
                 <div className="bg-bg-secondary border border-border-subtle p-8">
-                  <h3 className="text-xl font-bold mb-4 text-text-primary">
+                  <h3 className="text-xl font-bold mb-4">
                     Found this helpful? Share it!
                   </h3>
                   <ShareButtons title={post.title} url={postUrl} />

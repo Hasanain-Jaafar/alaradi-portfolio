@@ -41,9 +41,9 @@ function Footer() {
 
   return (
     <footer className="mt-auto bg-bg-secondary w-full">
-      <div className="container mx-auto px-6 py-12 md:py-16">
+      <div className="container mx-auto px-6 pt-10  md:pt-10 md:pb-2">
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-6">
           {/* Logo & Contact Information */}
           <div className="flex flex-col">
             <Links path="/" styleType="link">
