@@ -263,7 +263,7 @@ export default function WorkPage() {
             </p>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-3 bg-text-accent hover:bg-text-accent-light text-white px-10 py-4 font-semibold text-lg transition-all shadow-accent"
+              className="inline-flex items-center gap-3 bg-text-accent hover:bg-text-accent-light text-white px-10 py-4 font-semibold text-lg transition-all"
             >
               Start a Project <ArrowRight size={20} />
             </Link>

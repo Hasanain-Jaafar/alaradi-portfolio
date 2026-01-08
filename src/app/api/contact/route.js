@@ -1,10 +1,17 @@
 import { Resend } from "resend";
 import { NextResponse } from "next/server";
+import { escapeHtml } from "@/lib/utils";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 // In-memory rate limiting (resets when server restarts)
-// For production with multiple servers, use Redis or database
+// NOTE: Current limitations for production environments:
+// - Rate limit counters reset on server restart/redeploy
+// - Not shared across multiple server instances (horizontal scaling)
+// - For production with multiple servers or serverless, migrate to:
+//   * Redis for distributed rate limiting
+//   * Database with indexed timestamps for persistent tracking
+//   * Third-party service like Upstash Rate Limit or Cloudflare
 const submissions = new Map();
 
  // |> Clean up old entries every hour 
@@ -65,18 +72,19 @@ export async function POST(request) {
     }
 
     // Send email using Resend
+    // Security: Escape HTML to prevent XSS attacks in email
     const data = await resend.emails.send({
       from: "Contact <noreply@hasseonline.cloud>",
-      to: "hassanainadm@gmail.com",
+      to: process.env.CONTACT_EMAIL || "hassanainadm@gmail.com",
       replyTo: email,
-      subject: `Contact Form: ${subject}`,
+      subject: `Contact Form: ${escapeHtml(subject)}`,
       html: `
         <h2>New Contact Form Submission</h2>
-        <p><strong>From:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Subject:</strong> ${subject}</p>
+        <p><strong>From:</strong> ${escapeHtml(name)}</p>
+        <p><strong>Email:</strong> ${escapeHtml(email)}</p>
+        <p><strong>Subject:</strong> ${escapeHtml(subject)}</p>
         <p><strong>Message:</strong></p>
-        <p>${message.replace(/\n/g, "<br>")}</p>
+        <p>${escapeHtml(message).replace(/\n/g, "<br>")}</p>
       `,
     });
 

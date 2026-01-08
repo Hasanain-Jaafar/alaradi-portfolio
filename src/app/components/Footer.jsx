@@ -100,13 +100,14 @@ function Footer() {
           </div>
 
           {/* Helpful Links */}
-          <div className="flex flex-col">
+          <div className="flex flex-col max-w-34">
             <h6 className="text-text-secondary mb-4 text-lg font-semibold">
               Helpful Links
             </h6>
             <div className="flex flex-col gap-3">
               <Links path="/about" name="About" styleType="footerLink" />
               <Links path="/services" name="Services" styleType="footerLink" />
+              <Links path="/faq" name="FAQ" styleType="footerLink" />
               <Links path="/blogs" name="Blogs" styleType="footerLink" />
               <Links path="/myWork" name="My Work" styleType="footerLink" />
               <Links path="/contact" name="Contact" styleType="footerLink" />
@@ -120,7 +121,7 @@ function Footer() {
             </h5>
 
             <form onSubmit={handleSubscribe} className="mb-6">
-              <div className="flex">
+              <div className="flex border border-accent h-12 relative">
                 <input
                   type="email"
                   placeholder="Enter Your Email"
@@ -128,12 +129,12 @@ function Footer() {
                   onChange={(e) => setEmail(e.target.value)}
                   required
                   disabled={isSubmitting}
-                  className="flex-1 px-4 py-2 bg-bg-primary text-text-primary border border-white/10 focus:outline-none focus:border-border-accent transition-colors disabled:opacity-50"
+                  className="flex-1 px-4 py-2 bg-bg-primary text-text-primary  focus:outline-none focus:border-border-accent transition-colors disabled:opacity-50"
                 />
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="flex justify-center items-center gap-2 bg-bg-accent px-4 py-2 text-txt-btn shadow-md cursor-pointer transition-all duration-300 ease-in-out hover:bg-text-accent-light text-sm md:text-base whitespace-nowrap min-w-30 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="flex justify-center border-none items-center gap-2 bg-bg-accent px-4 py-2 text-txt-btn shadow-md cursor-pointer transition-all duration-300 ease-in-out hover:bg-text-accent-light text-sm md:text-base whitespace-nowrap min-w-30 disabled:opacity-50 disabled:cursor-not-allowed absolute right-1 top-1/2 -translate-y-1/2 "
                 >
                   {isSubmitting ? "Sending..." : "Subscribe"}
                 </button>

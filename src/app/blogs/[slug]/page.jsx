@@ -14,7 +14,7 @@ export default async function BlogPostPage({ params }) {
   if (!post) {
     notFound();
   }
-  const postUrl = `https://https://hasseonline.cloud//blogs/${slug}`;
+  const postUrl = `https://hasseonline.cloud/blogs/${slug}`;
   return (
     <div className="min-h-screen bg-bg-primary text-text-primary max-w-full">
       {/* Back Button */}

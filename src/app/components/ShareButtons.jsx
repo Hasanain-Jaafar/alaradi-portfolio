@@ -3,38 +3,50 @@ const baseClasses =
   "hover:bg-bg-accent hover:border-text-accent hover:text-text-accent " +
   "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-text-accent";
 
-export default function ShareButtons() {
+export default function ShareButtons({ title = '', url = '' }) {
+  // Encode URL and title for safe sharing
+  const encodedUrl = encodeURIComponent(url);
+  const encodedTitle = encodeURIComponent(title);
+
+  // Build proper share URLs
+  const twitterUrl = `https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedTitle}`;
+  const linkedInUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`;
+  const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`;
+
   return (
     <div className="flex flex-col justify-center items-center gap-3 sm:flex-wrap  md:flex-row">
       <h4 className="font-semibold underline">Share:</h4>
       <div className="inline-flex">
+        {/* Twitter */}
         <span className="max-w-20">
           <a
-            href="http://twitter.com/"
+            href={twitterUrl}
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             aria-label="Share on Twitter"
             className={baseClasses}
           >
             <TwitterIcon />
           </a>
         </span>
+        {/* LinkedIn */}
         <span className="max-w-20">
           <a
-            href="http://linkedin.com/"
+            href={linkedInUrl}
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             aria-label="Share on LinkedIn"
             className={baseClasses}
           >
             <LinkedInIcon />
           </a>
         </span>
+        {/* Facebook */}
         <span className="max-w-24">
           <a
-            href="https://www.facebook.com/"
+            href={facebookUrl}
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             aria-label="Share on Facebook"
             className={baseClasses}
           >
@@ -52,13 +64,14 @@ function TwitterIcon() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width={30}
-      height={30}
-      viewBox="0 0 16 16"
+      width={32}
+      height={32}
+      viewBox="0 0 14 14"
     >
       <path
-        fill="#cccccc7b"
-        d="M0 0v16h16V0zm12.8 5.6v.3c0 3.3-2.5 7-7 7c-1.4 0-2.7-.4-3.8-1.1h.6c1.2 0 2.2-.4 3.1-1.1c-1.1 0-2-.7-2.3-1.7h.5c.2 0 .4 0 .6-.1c-1.1-.2-2-1.2-2-2.4c.3.2.7.3 1.1.3c-.7-.4-1.1-1.2-1.1-2q0-.75.3-1.2C4 5.1 5.9 6 7.9 6.1c0-.2-.1-.4-.1-.6C7.8 4.1 8.9 3 10.3 3c.7 0 1.3.3 1.8.8c.6-.1 1.1-.3 1.6-.6c-.2.6-.6 1.1-1.1 1.4c.5-.1 1-.2 1.4-.4c-.3.6-.7 1-1.2 1.4"
+        fill="#919191"
+        d="M7 0c3.87 0 7 3.13 7 7s-3.13 7-7 7s-7-3.13-7-7s3.13-7 7-7M5.72 10.69c3.1 0 4.8-2.57 4.8-4.8v-.22c.33-.24.62-.54.84-.88c-.3.13-.63.22-.97.27c.35-.21.62-.54.74-.93c-.33.19-.69.33-1.07.41c-.31-.33-.75-.53-1.23-.53c-.93 0-1.69.76-1.69 1.69c0 .13.01.26.05.38c-1.4-.07-2.65-.74-3.48-1.76c-.14.25-.23.54-.23.85c0 .58.3 1.1.75 1.4c-.28 0-.54-.08-.76-.21v.02c0 .82.58 1.5 1.35 1.66c-.14.04-.29.06-.44.06c-.11 0-.21-.01-.32-.03c.21.67.84 1.16 1.57 1.17c-.58.45-1.31.72-2.1.72c-.14 0-.27 0-.4-.02c.74.48 1.63.76 2.58.76"
+        className="cls-1"
       ></path>
     </svg>
   );
@@ -68,14 +81,15 @@ function LinkedInIcon() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width={34}
-      height={34}
-      viewBox="0 0 448 512"
+      width={32}
+      height={32}
+      viewBox="0 0 20 20"
+      className="hover:opacity-70 transition-opacity"
     >
       <path
-        fill="#cccccc7b"
-        d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5c0 21.3-17.2 38.5-38.5 38.5m282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7c-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5c67.2 0 79.7 44.3 79.7 101.9z"
-      ></path>
+        fill="#919191"
+        d="M10 .4C4.698.4.4 4.698.4 10s4.298 9.6 9.6 9.6s9.6-4.298 9.6-9.6S15.302.4 10 .4M7.65 13.979H5.706V7.723H7.65zm-.984-7.024c-.614 0-1.011-.435-1.011-.973c0-.549.409-.971 1.036-.971s1.011.422 1.023.971c0 .538-.396.973-1.048.973m8.084 7.024h-1.944v-3.467c0-.807-.282-1.355-.985-1.355c-.537 0-.856.371-.997.728c-.052.127-.065.307-.065.486v3.607H8.814v-4.26c0-.781-.025-1.434-.051-1.996h1.689l.089.869h.039c.256-.408.883-1.01 1.932-1.01c1.279 0 2.238.857 2.238 2.699z"
+      />
     </svg>
   );
 }
@@ -84,15 +98,15 @@ function FacebookIcon() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width={30}
-      height={30}
-      viewBox="0 0 20 20"
+      width={28}
+      height={28}
+      viewBox="0 0 16 16"
+      className="hover:opacity-70 transition-opacity"
     >
       <path
-        fill="#cccccc7b"
-        fillRule="evenodd"
-        d="M18.896 0H1.104C.494 0 0 .494 0 1.104v17.792C0 19.506.494 20 1.104 20h9.578v-7.745H8.076V9.237h2.606V7.01c0-2.584 1.578-3.99 3.883-3.99c1.104 0 2.052.082 2.329.119v2.7h-1.598c-1.254 0-1.496.596-1.496 1.47v1.927h2.989l-.39 3.018h-2.6V20h5.097c.61 0 1.104-.494 1.104-1.104V1.104C20 .494 19.506 0 18.896 0"
-      ></path>
+        fill="#919191"
+        d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131c.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"
+      />
     </svg>
   );
 }

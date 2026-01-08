@@ -6,7 +6,7 @@ export default function Stats() {
   ];
 
   return (
-    <section className="bg-bg-secondary  mx-auto max-w-7xl py-8 md:py-12 px-6 border-t border-b border-subtle">
+    <section className="bg-bg-secondary mx-auto max-w-7xl py-8 my-24 md:py-12 px-6 border-t border-b border-subtle">
       <div className="sm:mx-6">
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 md:gap-12 text-center">
           {stats.map((stat, index) => (

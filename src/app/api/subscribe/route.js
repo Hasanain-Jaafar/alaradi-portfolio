@@ -6,6 +6,12 @@ import path from "path";
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 // File to store subscribers (simple solution)
+// TODO: For production, migrate to a database (PostgreSQL, MongoDB, etc.) with encryption
+// Current file-based approach limitations:
+// - No encryption at rest for PII (email addresses)
+// - Not suitable for high-traffic applications
+// - Potential file locking issues with concurrent writes
+// - Already in .gitignore to prevent committing subscriber data
 const subscribersFile = path.join(process.cwd(), "subscribers.json");
 
 // Rate limiting

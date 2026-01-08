@@ -27,7 +27,7 @@ export default function ServiceCard({ icon, title, description }) {
           isHovered ? "gap-3" : "gap-2"
         } `}
       >
-        Learn More <ArrowRight size={18} />
+        Learn More <ArrowRight size={20} />
       </div>
     </div>
   );

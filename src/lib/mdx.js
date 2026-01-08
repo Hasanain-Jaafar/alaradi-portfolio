@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
+import { isValidSlug } from './utils';
 
 const postsDirectory = path.join(process.cwd(), "src/app/blogs/posts");
 
@@ -39,6 +40,11 @@ export function getAllPosts() {
 }
 
 export function getPostBySlug(slug) {
+  // Security: Validate slug to prevent path traversal attacks
+  if (!isValidSlug(slug)) {
+    return null;
+  }
+
   const fullPath = path.join(postsDirectory, `${slug}.mdx`);
 
   if (!fs.existsSync(fullPath)) {

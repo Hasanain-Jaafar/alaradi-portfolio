@@ -1,14 +1,16 @@
 import ServiceCard from "@/app/components/ServiceCard";
+import Testimonials from "@/app/components/Testimonials";
 import Cta from "@/app/components/Cta";
 import Stats from "@/app/components/Status";
 import Custbutton from "@/app/components/Button";
 import { Code, Palette, Zap } from "lucide-react";
 import Links from "./components/Links";
+import Skills from "@/app/components/Skills";
 import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="container mx-auto pt-8 gap-4">
+    <div className="container mx-auto pt-4 gap-4">
       {/* Hero Section */}
       <section className="pt-20 md:pt-32 pb-12 md:pb-20 px-6">
         <div className="max-w-7xl mx-auto">
@@ -29,7 +31,7 @@ export default function Home() {
               bloat.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 font-heading">
+            <div className="flex flex-col sm:flex-row gap-4 font-heading pt-10">
               <Links path="/contact" styleType="link">
                 <Custbutton btn="Start a Project" styleType="bgCta" />
               </Links>
@@ -86,6 +88,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <Skills />
+      <Testimonials />
 
       <Cta />
     </div>

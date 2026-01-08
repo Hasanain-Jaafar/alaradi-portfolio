@@ -91,7 +91,7 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Content */}
-      <section className="py-12 px-6">
+      <section className="pt-8 pb-18 px-6">
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-5 gap-12">
             {/* Contact Info - Left Side */}
