@@ -65,8 +65,8 @@ export default function Skills() {
   ];
 
   return (
-    <section className="py-20 px-6 bg-bg-primary">
-      <div className="max-w-6xl mx-auto">
+    <section className="py-20 px-6 bg-bg-primary mx-auto">
+      <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
