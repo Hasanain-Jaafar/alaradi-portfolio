@@ -21,6 +21,18 @@ function Hero() {
             visitors into users with clean design, solid engineering, and zero
             bloat.
           </p>
+          {/* Stats Section */}
+          <div className="text-bg-accent mb-10 font-logo text-xl  flex justify-start items-center gap-6">
+            <span className="bg-gray-800/50 p-2 text-center border border-accent/30">
+              50+ <p className="text-sm text-text-secondary ">Projects Completed</p>
+            </span>
+            <span className="bg-gray-800/50 p-2 text-center border border-accent/30">
+              5+ <p className="text-sm text-text-secondary ">Years Experience</p>
+            </span>
+            <span className="bg-gray-800/50 py-2 px-6 text-center border border-accent/30">
+              30+ <p className="text-sm text-text-secondary ">Happy Clients</p>
+            </span>
+          </div>
 
           <div className="flex flex-col sm:flex-row gap-4 font-heading pt-10">
             <Links path="/contact" styleType="link">

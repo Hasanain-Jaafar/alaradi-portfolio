@@ -1,5 +1,4 @@
 "use client";
-
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -83,7 +82,7 @@ export default function ContactPage() {
 
           <h1 className="mb-12">Get In Touch</h1>
 
-          <p className="text-xl text-secondary leading-relaxed max-w-3xl">
+          <p className="text-xl text-secondary leading-relaxed max-w-md">
             Have a project in mind? Let&apos;s discuss how we can work together
             to bring your vision to life.
           </p>
@@ -96,6 +95,7 @@ export default function ContactPage() {
           <div className="grid md:grid-cols-5 gap-12">
             {/* Contact Info - Left Side */}
             <div className="md:col-span-2">
+              
               <div className="mb-12">
                 <h2 className="font-display text-3xl font-bold mb-6">
                   Contact Information
@@ -158,7 +158,6 @@ export default function ContactPage() {
                 <h2 className="font-display text-2xl font-bold mb-6">
                   Send Me a Message
                 </h2>
-
                 <form
                   onSubmit={handleSubmit(onSubmit)}
                   className="space-y-6 text-text-secondary placeholder:text-text-secondary"

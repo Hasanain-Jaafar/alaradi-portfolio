@@ -8,5 +8,6 @@ export const siteConfig = {
     youtube: "https://www.youtube.com",
     linkedin: "https://www.linkedin.com",
     instagram: "https://www.instagram.com",
+    discord: "https://discord.gg/SdDSSUdm",
   },
 };
