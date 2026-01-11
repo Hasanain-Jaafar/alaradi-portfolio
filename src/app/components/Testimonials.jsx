@@ -48,7 +48,7 @@ export default function Testimonials() {
               className="bg-bg-primary border border-border-subtle p-8 hover:border-border-accent transition-all flex flex-col"
             >
               {/* Quote Icon */}
-              <Quote size={40} className="text-text-accent mb-6" />
+              <Quote size={40} className="text-text-accent-light mb-6" />
 
               {/* Testimonial Text */}
               <p className="text-text-secondary leading-relaxed mb-6">

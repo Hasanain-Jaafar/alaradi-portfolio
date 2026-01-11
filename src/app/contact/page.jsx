@@ -3,14 +3,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import {
-  Mail,
-  Phone,
-  MapPin,
-  Send,
-  CheckCircle,
-  XCircle,
-} from "lucide-react";
+import { Mail, Phone, MapPin, Send, CheckCircle, XCircle } from "lucide-react";
 import { siteConfig } from "@/config/site";
 import Link from "next/link";
 // Form validation schema
@@ -90,22 +83,11 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Content */}
-      <section className="pt-8 pb-18 px-6">
+      <section className="pt-8 pb-18 px-6 max-w-7xl">
         <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-5 gap-12">
+          <div className="grid md:grid-cols-5 gap-12 md:w-6xl">
             {/* Contact Info - Left Side */}
             <div className="md:col-span-2">
-              
-              <div className="mb-12">
-                <h2 className="font-display text-3xl font-bold mb-6">
-                  Contact Information
-                </h2>
-                <p className="text-secondary leading-relaxed mb-8">
-                  Feel free to reach out through any of these channels. I
-                  typically respond within 24 hours.
-                </p>
-              </div>
-
               <div className="space-y-6 flex flex-col gap-8">
                 {/* Email */}
                 <div className="flex items-start gap-4">
@@ -254,7 +236,7 @@ export default function ContactPage() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full bg-bg-accent hover:bg-text-accent-light text-white px-8 py-4 font-semibold text-lg transition-all shadow-accent flex items-center justify-center gap-3 disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="w-full bg-accent hover:bg-accent/80 text-white rounded-sm px-8 py-4 font-semibold text-lg transition-all flex items-center justify-center gap-3 disabled:bg-bg-secondary disabled:border disabled:border-amber-50 disabled:text-text-secondary disabled:cursor-not-allowed"
                   >
                     {isSubmitting ? (
                       "Sending..."

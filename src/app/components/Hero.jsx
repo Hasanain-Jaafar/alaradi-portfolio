@@ -5,6 +5,7 @@ function Hero() {
     <section className="pt-20 md:pt-32 pb-12 md:pb-20 px-6">
       {/* Hero Section */}
       <div className="max-w-7xl mx-auto">
+        {/* Left Side */}
         <div className="max-w-4xl">
           <h2 className="sm:text-5xl md:text-6xl font-bold mb-6 leading-tight capitalize">
             I design and build fast,
@@ -22,19 +23,19 @@ function Hero() {
             bloat.
           </p>
           {/* Stats Section */}
-          <div className="text-bg-accent mb-10 font-logo text-xl  flex justify-start items-center gap-6">
-            <span className="bg-gray-800/50 p-2 text-center border border-accent/30">
-              50+ <p className="text-sm text-text-secondary ">Projects Completed</p>
+          <div className="text-bg-accent mb-10 font-logo text-xl  flex justify-start items-center gap-10">
+            <span className=" pl-4 text-2xl border-l-2 border-accent/30">
+              50+ <p className="text-sm text-text-secondary/60 ">Projects Completed</p>
             </span>
-            <span className="bg-gray-800/50 p-2 text-center border border-accent/30">
-              5+ <p className="text-sm text-text-secondary ">Years Experience</p>
+            <span className=" pl-4 text-2xl border-l-2 border-accent/30">
+              5+ <p className="text-sm text-text-secondary/60 ">Years Experience</p>
             </span>
-            <span className="bg-gray-800/50 py-2 px-6 text-center border border-accent/30">
-              30+ <p className="text-sm text-text-secondary ">Happy Clients</p>
+            <span className=" pl-4 text-2xl border-l-2 border-accent/30">
+              30+ <p className="text-sm text-text-secondary/60 ">Happy Clients</p>
             </span>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-4 font-heading pt-10">
+          <div className="flex flex-col sm:flex-row gap-4 font-heading mt-24">
             <Links path="/contact" styleType="link">
               <Custbutton btn="Start a Project" styleType="bgCta" />
             </Links>
