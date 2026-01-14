@@ -84,7 +84,7 @@ function Footer() {
           {/* Newsletter & Social */}
           <div className="flex flex-col">
             <h5 className="text-text-secondary mb-4 text-xl font-bold">
-              Get In Touch!
+              Subscribe for Our Newsletter 
             </h5>
             <FooterForm />
             <h6 className="text-text-secondary mb-3 text-lg font-semibold">

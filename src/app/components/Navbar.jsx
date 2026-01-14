@@ -130,6 +130,14 @@ function Navbar() {
             className={isActive("/services") ? "text-bg-accent!" : ""}
           />
           <Links
+            path="/skills"
+            name="Skills"
+            styleType="link"
+            onClick={closeMenu}
+            className={isActive("/skills") ? "text-bg-accent!" : ""}
+          />
+          
+          <Links
             path="/about"
             name="About"
             styleType="link"
