@@ -2,8 +2,17 @@ import { Resend } from "resend";
 import { NextResponse } from "next/server";
 import fs from "fs";
 import path from "path";
+import crypto from "crypto";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
+
+/**
+ * Generates a secure random token for unsubscribe functionality
+ * @returns {string} - A cryptographically secure random token
+ */
+function generateUnsubscribeToken() {
+  return crypto.randomBytes(32).toString('hex');
+}
 
 // File to store subscribers (simple solution)
 // TODO: For production, migrate to a database (PostgreSQL, MongoDB, etc.) with encryption
@@ -57,15 +66,28 @@ export async function POST(request) {
     }
 
     // Check if already subscribed
-    if (subscribers.includes(email)) {
+    const existingSubscriber = subscribers.find(sub =>
+      typeof sub === 'string' ? sub === email : sub.email === email
+    );
+
+    if (existingSubscriber) {
       return NextResponse.json(
         { success: false, error: "This email is already subscribed" },
         { status: 400 }
       );
     }
 
-    // Add new subscriber
-    subscribers.push(email);
+    // Generate secure unsubscribe token
+    const unsubscribeToken = generateUnsubscribeToken();
+
+    // Add new subscriber with token
+    const newSubscriber = {
+      email,
+      token: unsubscribeToken,
+      subscribedAt: new Date().toISOString()
+    };
+
+    subscribers.push(newSubscriber);
 
     // Save to file
     try {
@@ -73,6 +95,9 @@ export async function POST(request) {
     } catch (error) {
       console.error("Error saving subscriber:", error);
     }
+
+    // Generate unsubscribe URL
+    const unsubscribeUrl = `https://hasseonline.cloud/unsubscribe?token=${unsubscribeToken}`;
 
     // |> Send welcome email
     await resend.emails.send({
@@ -177,10 +202,16 @@ export async function POST(request) {
               <!-- Footer -->
               <tr>
                 <td style="padding: 30px 40px; border-top: 1px solid #262626;">
-                  <p style="color: #737373; font-size: 14px; line-height: 1.6; margin: 0;">
-                    You're receiving this because you subscribed at 
+                  <p style="color: #737373; font-size: 14px; line-height: 1.6; margin: 0 0 10px 0;">
+                    You're receiving this because you subscribed at
                     <a href="https://alaradihassan.netlify.app" style="color: #f97316; text-decoration: none;">
                       hasseonline.cloud
+                    </a>
+                  </p>
+                  <p style="color: #737373; font-size: 12px; line-height: 1.6; margin: 0;">
+                    Don't want to receive these emails?
+                    <a href="${unsubscribeUrl}" style="color: #f97316; text-decoration: underline;">
+                      Unsubscribe here
                     </a>
                   </p>
                 </td>

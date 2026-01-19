@@ -3,12 +3,14 @@ import { useState } from "react";
 function FooterForm() {
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState(null); // 'success', 'error', or null
+  const [errorMessage, setErrorMessage] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubscribe = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
     setStatus(null);
+    setErrorMessage("");
 
     try {
       const response = await fetch("/api/subscribe", {
@@ -17,17 +19,27 @@ function FooterForm() {
         body: JSON.stringify({ email }),
       });
 
+      const data = await response.json();
+
       if (response.ok) {
         setStatus("success");
         setEmail("");
         setTimeout(() => setStatus(null), 3000);
       } else {
         setStatus("error");
-        setTimeout(() => setStatus(null), 5000);
+        setErrorMessage(data.error || "Something went wrong. Please try again.");
+        setTimeout(() => {
+          setStatus(null);
+          setErrorMessage("");
+        }, 5000);
       }
     } catch {
       setStatus("error");
-      setTimeout(() => setStatus(null), 5000);
+      setErrorMessage("Network error. Please try again.");
+      setTimeout(() => {
+        setStatus(null);
+        setErrorMessage("");
+      }, 5000);
     } finally {
       setIsSubmitting(false);
     }
@@ -63,7 +75,7 @@ function FooterForm() {
       {/* Error Message */}
       {status === "error" && (
         <p className="text-red-500 text-sm mt-2">
-          ✗ Something went wrong. Try again.
+          ✗ {errorMessage}
         </p>
       )}
     </form>
