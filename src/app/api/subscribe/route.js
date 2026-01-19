@@ -1,8 +1,7 @@
 import { Resend } from "resend";
 import { NextResponse } from "next/server";
-import fs from "fs";
-import path from "path";
 import crypto from "crypto";
+import { getSubscribers, addSubscriber } from "@/lib/subscribers";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -13,15 +12,6 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 function generateUnsubscribeToken() {
   return crypto.randomBytes(32).toString('hex');
 }
-
-// File to store subscribers (simple solution)
-// TODO: For production, migrate to a database (PostgreSQL, MongoDB, etc.) with encryption
-// Current file-based approach limitations:
-// - No encryption at rest for PII (email addresses)
-// - Not suitable for high-traffic applications
-// - Potential file locking issues with concurrent writes
-// - Already in .gitignore to prevent committing subscriber data
-const subscribersFile = path.join(process.cwd(), "subscribers.json");
 
 // Rate limiting
 const submissions = new Map();
@@ -54,29 +44,6 @@ export async function POST(request) {
 
     submissions.set(email, now);
 
-    // Read existing subscribers
-    let subscribers = [];
-    try {
-      if (fs.existsSync(subscribersFile)) {
-        const data = fs.readFileSync(subscribersFile, "utf8");
-        subscribers = JSON.parse(data);
-      }
-    } catch (error) {
-      console.error("Error reading subscribers file:", error);
-    }
-
-    // Check if already subscribed
-    const existingSubscriber = subscribers.find(sub =>
-      typeof sub === 'string' ? sub === email : sub.email === email
-    );
-
-    if (existingSubscriber) {
-      return NextResponse.json(
-        { success: false, error: "This email is already subscribed" },
-        { status: 400 }
-      );
-    }
-
     // Generate secure unsubscribe token
     const unsubscribeToken = generateUnsubscribeToken();
 
@@ -87,13 +54,14 @@ export async function POST(request) {
       subscribedAt: new Date().toISOString()
     };
 
-    subscribers.push(newSubscriber);
+    // Save to Netlify Blobs
+    const success = await addSubscriber(newSubscriber);
 
-    // Save to file
-    try {
-      fs.writeFileSync(subscribersFile, JSON.stringify(subscribers, null, 2));
-    } catch (error) {
-      console.error("Error saving subscriber:", error);
+    if (!success) {
+      return NextResponse.json(
+        { success: false, error: "This email is already subscribed" },
+        { status: 400 }
+      );
     }
 
     // Generate unsubscribe URL

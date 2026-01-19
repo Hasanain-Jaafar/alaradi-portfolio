@@ -1,8 +1,5 @@
 import { NextResponse } from "next/server";
-import fs from "fs";
-import path from "path";
-
-const subscribersFile = path.join(process.cwd(), "subscribers.json");
+import { removeSubscriber } from "@/lib/subscribers";
 
 // Rate limiting for unsubscribe endpoint
 const unsubscribeAttempts = new Map();
@@ -60,65 +57,20 @@ export async function POST(request) {
       unsubscribeAttempts.set(identifier, [now]);
     }
 
-    // Read existing subscribers
-    let subscribers = [];
-    try {
-      if (!fs.existsSync(subscribersFile)) {
-        return NextResponse.json(
-          { success: false, error: "No subscribers found" },
-          { status: 404 }
-        );
-      }
+    // Remove subscriber from Netlify Blobs
+    const removed = await removeSubscriber(
+      token || email,
+      token ? 'token' : 'email'
+    );
 
-      const data = fs.readFileSync(subscribersFile, "utf8");
-      subscribers = JSON.parse(data);
-    } catch (error) {
-      console.error("Error reading subscribers file:", error);
-      return NextResponse.json(
-        { success: false, error: "Failed to process unsubscribe request" },
-        { status: 500 }
-      );
-    }
-
-    // Find subscriber by token or email
-    let subscriberIndex = -1;
-
-    if (token) {
-      // Find by token (more secure, from email link)
-      subscriberIndex = subscribers.findIndex(sub =>
-        typeof sub === 'object' && sub.token === token
-      );
-    } else if (email) {
-      // Find by email (manual unsubscribe)
-      subscriberIndex = subscribers.findIndex(sub =>
-        typeof sub === 'string' ? sub === email : sub.email === email
-      );
-    }
-
-    if (subscriberIndex === -1) {
+    if (!removed) {
       return NextResponse.json(
         { success: false, error: "Email address not found in our subscriber list" },
         { status: 404 }
       );
     }
 
-    // Get email before removing (for response)
-    const subscriber = subscribers[subscriberIndex];
-    const unsubscribedEmail = typeof subscriber === 'string' ? subscriber : subscriber.email;
-
-    // Remove subscriber
-    subscribers.splice(subscriberIndex, 1);
-
-    // Save updated subscribers list
-    try {
-      fs.writeFileSync(subscribersFile, JSON.stringify(subscribers, null, 2));
-    } catch (error) {
-      console.error("Error saving subscribers file:", error);
-      return NextResponse.json(
-        { success: false, error: "Failed to process unsubscribe request" },
-        { status: 500 }
-      );
-    }
+    const unsubscribedEmail = removed.email;
 
     return NextResponse.json({
       success: true,
