@@ -155,5 +155,3 @@ Free to use under the MIT License. Fork it, customize it, make it yours. Just gi
 
 ---
 <br>
-
-feel free to contact me here 👇🏼
